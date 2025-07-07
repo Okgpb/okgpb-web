@@ -1,0 +1,10 @@
+baseURL = "https://example.org/"
+languageCode = "zh-cn" 
+title = "我的个人网站" 
+theme = "saral" 
+
+[params]
+# 这是主题的参数，可以去主题文档里看更多设置
+ShowReadingTime = true
+ShowShareButtons = true
+ShowPostNavLinks = true
