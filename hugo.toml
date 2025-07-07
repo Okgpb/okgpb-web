@@ -1,6 +1,6 @@
 baseURL = "https://example.org/"
 languageCode = "zh-cn" 
-title = "我的个人网站" 
+title = "Okgpb's web" 
 theme = "saral" 
 
 [params]

@@ -8,7 +8,7 @@ pygmentsCodefences = true
 pygmentsStyle = "doom-one"
 
 [params]
-    logoText = "Saral"
+    logoText = "Okgpb"
     isBlogFocused = true
     showHeroImage = true
     showResumeButton = false
