@@ -3,7 +3,7 @@ languageCode = 'en-us'
 title = 'Saral : A simple hugo theme'
 author = "dipeshsingh253"
 
-# theme = 'saral'
+theme = 'saral'
 pygmentsCodefences = true
 pygmentsStyle = "doom-one"
 
