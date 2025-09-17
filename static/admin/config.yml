@@ -1,18 +1,17 @@
 backend:
   name: github
-  repo: Okgpb/okgpb-web # 确保这里是你的 GitHub用户名/仓库名
+  # 确保这里的 repo 路径是你在 GitHub 页面看到的精确路径
+  repo: Okgpb/okgpb-web 
 
-media_folder: "static/images/uploads"
-public_folder: "/images/uploads"
+# 我们暂时只定义媒体文件夹，不定义公共路径
+media_folder: "static/images"
 
+# 我们只定义一个最简单的集合和两个最基本的字段
 collections:
-  - name: "blog"
-    label: "博客文章"
+  - name: "posts"
+    label: "Posts"
     folder: "content/posts"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "标题", name: "title", widget: "string"}
-      - {label: "发布日期", name: "date", widget: "datetime"}
-      - {label: "草稿", name: "draft", widget: "boolean", default: true}
-      - {label: "正文", name: "body", widget: "markdown"}
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
