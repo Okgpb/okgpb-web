@@ -1,17 +1,19 @@
+# 这是一个完全干净、没有特殊字符的版本
 backend:
   name: github
-  # 确保这里的 repo 路径是你在 GitHub 页面看到的精确路径
-  repo: Okgpb/okgpb-web 
+  repo: Okgpb/okgpb-web
 
-# 我们暂时只定义媒体文件夹，不定义公共路径
-media_folder: "static/images"
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
 
-# 我们只定义一个最简单的集合和两个最基本的字段
 collections:
-  - name: "posts"
-    label: "Posts"
+  - name: "blog"
+    label: "博客文章"
     folder: "content/posts"
     create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "发布日期", name: "date", widget: "datetime" }
+      - { label: "草稿", name: "draft", widget: "boolean", default: true }
+      - { label: "正文", name: "body", widget: "markdown" }
