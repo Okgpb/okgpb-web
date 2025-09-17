@@ -1,5 +1,7 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: Okgpb/okgpb-web
+  branch: main
 
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
