@@ -1,7 +1,5 @@
-# 这是一个完全干净、没有特殊字符的版本
 backend:
-  name: github
-  repo: Okgpb/okgpb-web
+  name: git-gateway
 
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
