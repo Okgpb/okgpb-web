@@ -1,21 +1,17 @@
-# 后端配置 (Backend)
 backend:
-  name: github # 使用 GitHub 作为后端
-  repo: Okgpb/okgpb-web # ！！！你的仓库路径，请最后再确认一遍
-  branch: main # 你的主分支名
+  name: git-gateway
 
-# 媒体文件配置 (Media and Public Folders)
-media_folder: "static/images/uploads" # 上传的图片保存到这里
-public_folder: "/images/uploads" # 在文章中引用图片时的路径
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
 
-# 内容集合配置 (Collections)
 collections:
-  - name: "posts" # 集合的名字
-    label: "博文" # 在后台界面上显示的名称
-    folder: "content/posts" # 新文章保存到这个文件夹
-    create: true # 允许创建新文章
-    fields: # 定义编辑器里的字段
-      - { name: "title", label: "标题", widget: "string" }
-      - { name: "date", label: "发布日期", widget: "datetime" }
-      - { name: "draft", label: "草稿", widget: "boolean", default: true }
-      - { name: "body", label: "正文", widget: "markdown" }
+  - name: "blog"
+    label: "博客文章"
+    folder: "content/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "发布日期", name: "date", widget: "datetime" }
+      - { label: "草稿", name: "draft", widget: "boolean", default: true }
+      - { label: "正文", name: "body", widget: "markdown" }
