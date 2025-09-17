@@ -1,0 +1,21 @@
+# 后端配置：告诉 Decap CMS 如何连接到你的 GitHub 仓库
+backend:
+  name: github
+  repo: https://github.com/Okgpb/okgpb-web
+
+# 媒体文件配置：告诉 Decap CMS 上传的图片应该放在哪里
+media_folder: "static/images/uploads" # 上传的图片会保存在这个文件夹
+public_folder: "/images/uploads" # 在文章中引用图片时的路径
+
+# 内容集合配置：定义你的内容类型，这里我们只定义“博客文章”
+collections:
+  - name: "blog" # 集合的名称，可以自定义
+    label: "博客文章" # 在后台管理界面上显示的名称
+    folder: "content/posts" # ！！！重要：新文章要保存在哪个文件夹下
+    create: true # 允许在后台创建新文章
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # 文章的文件名格式
+    fields: # 定义编辑器里的字段
+      - {label: "标题", name: "title", widget: "string"}
+      - {label: "发布日期", name: "date", widget: "datetime"}
+      - {label: "草稿", name: "draft", widget: "boolean", default: true}
+      - {label: "正文", name: "body", widget: "markdown"}
