@@ -1,6 +1,6 @@
 baseURL = 'http://saral-hugo-theme.pages.dev'
 languageCode = 'en-us'
-title = 'Okgpb's web'
+title = 'Okgpb's web''
 author = "dipeshsingh253"
 
 theme = 'saral'
