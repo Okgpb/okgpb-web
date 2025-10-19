@@ -1,0 +1,281 @@
+[
+    {
+        "date": "2025.9.14",
+        "total": 16.0,
+        "trades": {
+            "HIFIUSDT": "16.00%",
+            "FUSDT": "16.00%",
+            "PUMPBTCUSDT": "16.00%"
+        }
+    },
+    {
+        "date": "2025.9.15",
+        "total": 0.0,
+        "trades": {
+            "ZKCUSDT": "-10.00%",
+            "AVNTUSDT": "-10.00%",
+            "PINGPONGUSDT": "20.00%"
+        }
+    },
+    {
+        "date": "2025.9.16",
+        "total": -4.9,
+        "trades": {
+            "XCXUSDT": "-4.10%",
+            "PROMUSDT": "-4.50%",
+            "REXUSDT": "-6.20%"
+        }
+    },
+    {
+        "date": "2025.9.18",
+        "total": -3.1,
+        "trades": {
+            "MOODENGUSDT": "-3.00%",
+            "KMNOUSDT": "-1.20%",
+            "FTTUSDT": "-5.00%"
+        }
+    },
+    {
+        "date": "2025.9.19",
+        "total": 4.1,
+        "trades": {
+            "DUCKUSDT": "10.00%",
+            "AINUSDT": "2.00%",
+            "MUSDT": "0.20%"
+        }
+    },
+    {
+        "date": "2025.9.20",
+        "total": -2.7,
+        "trades": {
+            "RDACUSDT": "-5.00%",
+            "WUSDT": "-1.70%",
+            "BIOUSDT": "-1.40%"
+        }
+    },
+    {
+        "date": "2025.9.21",
+        "total": 0.0,
+        "trades": {
+            "GATAUSDT": "-8.00%",
+            "KILOUSDT": "-8.00%",
+            "PUMPBTCUSDT": "16.00%"
+        }
+    },
+    {
+        "date": "2025.9.22",
+        "total": 0.0,
+        "trades": {
+            "RIVERUSDT": "-8.00%",
+            "PUMPBTCUSDT": "16.00%",
+            "GORKUSDT": "-8.00%"
+        }
+    },
+    {
+        "date": "2025.9.23",
+        "total": 8.9,
+        "trades": {
+            "GATAUSDT": "16.00%",
+            "BARDUSDT": "-5.30%",
+            "SIGNUSDT": "16.00%"
+        }
+    },
+    {
+        "date": "2025.9.24",
+        "total": 0.0,
+        "trades": {
+            "INUSDT": "16.00%",
+            "RIVERUSDT": "-8.00%",
+            "UXLINKUSDT": "-8.00%"
+        }
+    },
+    {
+        "date": "2025.9.25",
+        "total": 2.3,
+        "trades": {
+            "SPONUSDT": "-8.00%",
+            "BSUUSDT": "16.00%",
+            "BTRUSDT": "-1.10%"
+        }
+    },
+    {
+        "date": "2025.9.26",
+        "total": -0.1,
+        "trades": {
+            "SNXUSDT": "-8.00%",
+            "SKATEUSDT": "-8.00%",
+            "XPLUSDT": "15.70%"
+        }
+    },
+    {
+        "date": "2025.9.27",
+        "total": 0.5,
+        "trades": {
+            "ALPINEUSDT": "16.00%",
+            "KILOUSDT": "-8.00%",
+            "MYXUSDT": "-6.60%"
+        }
+    },
+    {
+        "date": "2025.9.28",
+        "total": 2.7,
+        "trades": {
+            "SPONUSDT": "-8.00%",
+            "HUSDT": "0.00%",
+            "RFCUSDT": "16.00%"
+        }
+    },
+    {
+        "date": "2025.9.29",
+        "total": -3.9,
+        "trades": {
+            "ORDERUSDT": "4.30%",
+            "DOODUSDT": "-8.00%",
+            "SUPERUSDT": "-8.00%"
+        }
+    },
+    {
+        "date": "2025.9.30",
+        "total": -8.0,
+        "trades": {
+            "EDENUSDT": "-8.00%",
+            "TOMAUSDT": "-8.00%",
+            "SWTCHUSDT": "-8.00%"
+        }
+    },
+    {
+        "date": "2025.10.1",
+        "total": 8.0,
+        "trades": {
+            "SWTCHUSDT": "16.00%",
+            "SOMIUSDT": "-8.00%",
+            "LAUNCHCOINUSDT": "16.00%"
+        }
+    },
+    {
+        "date": "2025.10.4",
+        "total": 0.0,
+        "trades": {
+            "COAUSDT": "-8.00%",
+            "AIAUSDT": "16.00%",
+            "RFCUSDT": "-8.00%"
+        }
+    },
+    {
+        "date": "2025.10.5",
+        "total": 0.0,
+        "trades": {
+            "MLUSDT": "16.00%",
+            "CELOUSDT": "-8.00%",
+            "TUTUSDT": "-8.00%"
+        }
+    },
+    {
+        "date": "2025.10.6",
+        "total": 0.0,
+        "trades": {
+            "BLESSUSDT": "-8.00%",
+            "EPTUSDT": "16.00%",
+            "REXUSDT": "-8.00%"
+        }
+    },
+    {
+        "date": "2025.10.7",
+        "total": -5.3,
+        "trades": {
+            "DOODUSDT": "-8.00%",
+            "SOONUSDT": "-8.00%",
+            "COAIUSDT": "0.10%"
+        }
+    },
+    {
+        "date": "2025.10.8",
+        "total": 8.0,
+        "trades": {
+            "MASUSDT": "-8.00%",
+            "CHEEMSUSDT": "16.00%",
+            "BOOMSDT": "16.00%"
+        }
+    },
+    {
+        "date": "2025.10.9",
+        "total": 2.7,
+        "trades": {
+            "MOREUSDT": "0.00%",
+            "ZORAUSDT": "16.00%",
+            "BLUMUSDT": "-8.00%"
+        }
+    },
+    {
+        "date": "2025.10.10",
+        "total": 0.0,
+        "trades": {
+            "KGENUSDT": "16.00%",
+            "ZORAUSDT": "-8.00%",
+            "INUSDT": "-8.00%"
+        }
+    },
+    {
+        "date": "2025.10.11",
+        "total": 16.0,
+        "trades": {
+            "ZEREBROUSDT": "16.00%",
+            "COAUSDT": "16.00%",
+            "RFCUSDT": "16.00%"
+        }
+    },
+    {
+        "date": "2025.10.13",
+        "total": -8.0,
+        "trades": {
+            "UXLINKUSDT": "-8.00%",
+            "SNXUSDT": "-8.00%",
+            "TAGUSDT": "-8.00%"
+        }
+    },
+        {
+        "date": "2025-10-14",
+        "trades": {
+            "KGENUSDT": "-8.00%",
+            "HUSDT": "-8.00%",
+            "FLKUSDT": "16.00%"
+        },
+        "total": 0
+    },
+    {
+        "date": "2025-10-15",
+        "trades": {
+            "COAIUSDT": "-8.00%",
+            "BLESSUSDT": "-8.00%",
+            "YBUSDT": "-8.00%"
+        },
+        "total": -8
+    },
+    {
+        "date": "2025-10-16",
+        "trades": {
+            "LABUSDT": "16.00%",
+            "BLESSUSDT": "16.00%",
+            "KGENUSDT": "16.00%"
+        },
+        "total": 16
+    },
+    {
+        "date": "2025-10-17",
+        "trades": {
+            "FROGGIEUSDT": "-8.00%",
+            "LABUSDT": "16.00%",
+            "AIOUSDT": "-8.00%"
+        },
+        "total": 0
+    },
+    {
+        "date": "2025-10-18",
+        "trades": {
+            "RECALLUSDT": "-9.26%",
+            "RIVERUSDT": "-14.95%",
+            "TOWNSUSDT": "-6.19%"
+        },
+        "total": -10.13
+    }
+]

@@ -1,0 +1,156 @@
+{{ define "main" }}
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+  </header>
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+
+  <div style="margin-bottom: 20px;">
+    <label for="startDateSelector" style="font-weight: bold;">选择初始计算日期: </label>
+    <select id="startDateSelector" style="padding: 5px; border-radius: 4px;"></select>
+  </div>
+
+  <div id="main-chart" style="width: 100%; height:1000px;"></div>
+
+</article>
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+
+<script type="text/javascript">
+  var waldenTheme = {{ site.Data.walden_theme | jsonify | safeJS }};
+  echarts.registerTheme('walden', waldenTheme);
+  
+  var myChart = echarts.init(document.getElementById('main-chart'), 'walden');
+  
+  var datePicker = document.getElementById('startDateSelector');
+  var allPerformanceData = {{ site.Data.trading_performance_v2 | jsonify | safeJS }};
+
+  function calculateCumulativeReturn(data, startDate) {
+    const startIndex = data.findIndex(item => item.date === startDate);
+    if (startIndex === -1) return [];
+    const relevantData = data.slice(startIndex);
+    let cumulativeProduct = 1.0;
+    const cumulativeData = [];
+    relevantData.forEach(item => {
+      const dailyReturnDecimal = item.total / 100;
+      cumulativeProduct = cumulativeProduct * (1 + dailyReturnDecimal);
+      cumulativeData.push({
+        date: item.date,
+        dailyTotal: item.total,
+        cumulative: (cumulativeProduct - 1) * 100,
+        trades: item.trades
+      });
+    });
+    return cumulativeData;
+  }
+
+  function populateDatePicker() {
+    allPerformanceData.forEach(item => {
+      const option = document.createElement('option');
+      option.value = item.date;
+      option.textContent = item.date;
+      datePicker.appendChild(option);
+    });
+  }
+
+  function updateChart() {
+    const selectedStartDate = datePicker.value;
+    const chartData = calculateCumulativeReturn(allPerformanceData, selectedStartDate);
+    const dates = chartData.map(item => item.date);
+    const cumulativeValues = chartData.map(item => item.cumulative.toFixed(2));
+
+    var option = {
+      title: {
+        text: 'Historical Cumulative Return',
+        left: 'center',
+        textStyle: {
+          fontFamily: 'Kristen ITC',
+          fontWeight: 'bold',
+          fontSize: 48
+        }
+      },
+      tooltip: {
+        trigger: 'axis',
+        formatter: function (params) {
+          const dataIndex = params[0].dataIndex;
+          const dayData = chartData[dataIndex];
+          if (!dayData) return;
+
+          const cumulativeColor = dayData.cumulative >= 0 ? '#16a34a' : '#dc2626';
+          const dailyColor = dayData.dailyTotal >= 0 ? '#16a34a' : '#dc2626';
+
+          let tooltipHtml = `<strong>日期: ${dayData.date}</strong><br/>`;
+          tooltipHtml += `<strong style="color: ${cumulativeColor};">累计收益率: ${dayData.cumulative.toFixed(2)}%</strong><br/>`;
+          tooltipHtml += `<span style="color: ${dailyColor};">当日总盈亏: ${dayData.dailyTotal}%</span>`;
+
+          if (dayData.trades && Object.keys(dayData.trades).length > 0) {
+              tooltipHtml += '<hr style="margin: 5px 0; border-color: #aaa;">';
+              tooltipHtml += '<strong>当日交易详情:</strong><br/>';
+              for (const coin in dayData.trades) {
+                  const tradeValue = parseFloat(dayData.trades[coin]);
+                  const tradeColor = tradeValue >= 0 ? '#16a34a' : '#dc2626';
+                  tooltipHtml += `<span style="color: ${tradeColor};">${coin}: &nbsp; ${dayData.trades[coin]}</span><br/>`;
+              }
+          }
+          
+          return tooltipHtml;
+        }
+      },
+      grid: { left: '3%', right: '4%', bottom: '10%', containLabel: true },
+      toolbox: {
+        feature: {
+          dataZoom: { yAxisIndex: 'none' },
+          restore: {},
+          saveAsImage: {}
+        }
+      },
+      xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: dates,
+        axisLabel: {
+            fontSize: 18,
+            fontWeight: 'bold',
+            fontFamily: 'agency fb'
+        }
+      },
+      yAxis: {
+        type: 'value',
+        axisLabel: {
+            formatter: '{value} %',
+            fontSize: 32,
+            fontWeight: 'bold',
+            fontFamily: 'agency fb'
+        },
+        min: -20,
+        max: 100,
+        scale: true
+      },
+      dataZoom: [ { type: 'inside' }, { start: 0, end: 100 } ],
+      series: [
+        {
+          name: '累计收益率',
+          type: 'line',
+          smooth: false,
+          symbol: 'none',
+          lineStyle: {
+            width: 10
+          },
+          data: cumulativeValues,
+        }
+      ]
+    };
+    
+    myChart.setOption(option);
+  }
+
+  populateDatePicker();
+  datePicker.addEventListener('change', updateChart);
+  updateChart();
+  window.addEventListener('resize', function() {
+    myChart.resize();
+  });
+</script>
+{{ end }}

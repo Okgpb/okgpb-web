@@ -1,0 +1,53 @@
+backend:
+  name: git-gateway
+  repo: Okgpb/okgpb-web
+  branch: main
+
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "posts"
+    label: "博客文章 (Posts)"
+    folder: "content/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "标题 (Title)", name: "title", widget: "string" }
+      - { label: "发布日期 (Date)", name: "date", widget: "datetime" }
+      - { label: "图片 (Image)", name: "image", widget: "image", required: false }
+      - { label: "草稿 (Draft)", name: "draft", widget: "boolean", default: true }
+      - { label: "正文 (Body)", name: "body", widget: "markdown" }
+
+  - name: "project"
+    label: "项目 (Projects)"
+    folder: "content/project"
+    create: true
+    fields:
+      - { label: "标题 (Title)", name: "title", widget: "string" }
+      - { label: "发布日期 (Date)", name: "date", widget: "datetime" }
+      - { label: "图片 (Image)", name: "image", widget: "image", required: false }
+      - { label: "草稿 (Draft)", name: "draft", widget: "boolean", default: true }
+      - { label: "正文 (Body)", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "独立页面 (Pages)"
+    files:
+      - label: "关于我 (About)"
+        name: "about"
+        file: "content/about.md"
+        fields:
+          - { label: "标题 (Title)", name: "title", widget: "string" }
+          - { label: "正文 (Body)", name: "body", widget: "markdown" }
+      - label: "旅行日志 (Journey)"
+        name: "journey"
+        file: "content/journey.md"
+        fields:
+          - { label: "标题 (Title)", name: "title", widget: "string" }
+          - { label: "正文 (Body)", name: "body", widget: "markdown" }
+      - label: "联系我 (Contact)"
+        name: "contact"
+        file: "content/contact.md"
+        fields:
+          - { label: "标题 (Title)", name: "title", widget: "string" }
+          - { label: "正文 (Body)", name: "body", widget: "markdown" }
