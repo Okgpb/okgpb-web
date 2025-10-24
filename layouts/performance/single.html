@@ -12,7 +12,7 @@
     <select id="startDateSelector" style="padding: 5px; border-radius: 4px;"></select>
   </div>
 
-  <div id="main-chart" style="width: 100%; height:1000px;"></div>
+  <div id="main-chart" style="width: 100%; height:80vh; min-height: 400px;"></div>
 
 </article>
 
@@ -27,6 +27,7 @@
   var datePicker = document.getElementById('startDateSelector');
   var allPerformanceData = {{ site.Data.trading_performance_v2 | jsonify | safeJS }};
 
+  // ... calculateCumulativeReturn 和 populateDatePicker 函数保持不变 ...
   function calculateCumulativeReturn(data, startDate) {
     const startIndex = data.findIndex(item => item.date === startDate);
     if (startIndex === -1) return [];
@@ -45,7 +46,6 @@
     });
     return cumulativeData;
   }
-
   function populateDatePicker() {
     allPerformanceData.forEach(item => {
       const option = document.createElement('option');
@@ -62,83 +62,112 @@
     const cumulativeValues = chartData.map(item => item.cumulative.toFixed(2));
 
     var option = {
-      title: {
-        text: 'Historical Cumulative Return',
-        left: 'center',
-        textStyle: {
-          fontFamily: 'Kristen ITC',
-          fontWeight: 'bold',
-          fontSize: 48
-        }
-      },
-      tooltip: {
-        trigger: 'axis',
-        formatter: function (params) {
-          const dataIndex = params[0].dataIndex;
-          const dayData = chartData[dataIndex];
-          if (!dayData) return;
-
-          const cumulativeColor = dayData.cumulative >= 0 ? '#16a34a' : '#dc2626';
-          const dailyColor = dayData.dailyTotal >= 0 ? '#16a34a' : '#dc2626';
-
-          let tooltipHtml = `<strong>日期: ${dayData.date}</strong><br/>`;
-          tooltipHtml += `<strong style="color: ${cumulativeColor};">累计收益率: ${dayData.cumulative.toFixed(2)}%</strong><br/>`;
-          tooltipHtml += `<span style="color: ${dailyColor};">当日总盈亏: ${dayData.dailyTotal}%</span>`;
-
-          if (dayData.trades && Object.keys(dayData.trades).length > 0) {
+      baseOption: {
+        title: {
+          text: '策略累计收益率曲线',
+          left: 'center',
+          textStyle: { fontWeight: 'bold', fontSize: 36, fontFamily: 'Century Gothic' }
+        },
+        tooltip: {
+          trigger: 'axis',
+          formatter: function (params) {
+            const dataIndex = params[0].dataIndex;
+            const dayData = chartData[dataIndex];
+            if (!dayData) return;
+            const cumulativeColor = dayData.cumulative >= 0 ? '#16a34a' : '#dc2626';
+            const dailyColor = dayData.dailyTotal >= 0 ? '#16a34a' : '#dc2626';
+            let tooltipHtml = `<strong>日期: ${dayData.date}</strong><br/>`;
+            tooltipHtml += `<strong style="color: ${cumulativeColor};">累计收益率: ${dayData.cumulative.toFixed(2)}%</strong><br/>`;
+            tooltipHtml += `<span style="color: ${dailyColor};">当日总盈亏: ${dayData.dailyTotal}%</span>`;
+            if (dayData.trades && Object.keys(dayData.trades).length > 0) {
               tooltipHtml += '<hr style="margin: 5px 0; border-color: #aaa;">';
               tooltipHtml += '<strong>当日交易详情:</strong><br/>';
               for (const coin in dayData.trades) {
-                  const tradeValue = parseFloat(dayData.trades[coin]);
-                  const tradeColor = tradeValue >= 0 ? '#16a34a' : '#dc2626';
-                  tooltipHtml += `<span style="color: ${tradeColor};">${coin}: &nbsp; ${dayData.trades[coin]}</span><br/>`;
+                const tradeValue = parseFloat(dayData.trades[coin]);
+                const tradeColor = tradeValue >= 0 ? '#16a34a' : '#dc2626';
+                tooltipHtml += `<span style="color: ${tradeColor};">${coin}: &nbsp; ${dayData.trades[coin]}</span><br/>`;
               }
+            }
+            return tooltipHtml;
           }
-          
-          return tooltipHtml;
-        }
-      },
-      grid: { left: '3%', right: '4%', bottom: '10%', containLabel: true },
-      toolbox: {
-        feature: {
-          dataZoom: { yAxisIndex: 'none' },
-          restore: {},
-          saveAsImage: {}
-        }
-      },
-      xAxis: {
-        type: 'category',
-        boundaryGap: false,
-        data: dates,
-        axisLabel: {
-            fontSize: 18,
-            fontWeight: 'bold',
-            fontFamily: 'agency fb'
-        }
-      },
-      yAxis: {
-        type: 'value',
-        axisLabel: {
-            formatter: '{value} %',
-            fontSize: 32,
-            fontWeight: 'bold',
-            fontFamily: 'agency fb'
         },
-        min: -20,
-        max: 100,
-        scale: true
+        grid: { left: '3%', right: '4%', bottom: '15%', containLabel: true },
+        toolbox: {
+          feature: {
+            dataZoom: { yAxisIndex: 'none' },
+            restore: {},
+            saveAsImage: {}
+          }
+        },
+        xAxis: {
+          type: 'category',
+          boundaryGap: false,
+          data: dates,
+          axisLabel: {
+            fontWeight: 'bold',
+            fontSize: 18,
+            fontFamily: 'Century Gothic',
+            formatter: function (value) {
+                if (typeof value === 'string' && value.length > 0) {
+                    let parts = value.split('.');
+                    if (parts.length === 3) { return parts[1] + '.' + parts[2]; }
+                    parts = value.split('-');
+                    if (parts.length === 3) { return parts[1] + '-' + parts[2]; }
+                }
+                return value;
+            }
+          }
+        },
+        yAxis: {
+          type: 'value',
+          axisLabel: { formatter: '{value} %', fontWeight: 'bold', fontSize: 36, fontFamily: 'Century Gothic' },
+          min: -20,
+          max: 100
+        },
+        dataZoom: [ { type: 'inside' }, { start: 0, end: 100 } ],
+        series: [
+          {
+            name: '累计收益率',
+            type: 'line',
+            smooth: false,
+            symbol: 'none',
+            lineStyle: { width: 10 },
+            data: cumulativeValues,
+          }
+        ]
       },
-      dataZoom: [ { type: 'inside' }, { start: 0, end: 100 } ],
-      series: [
+      media: [
         {
-          name: '累计收益率',
-          type: 'line',
-          smooth: false,
-          symbol: 'none',
-          lineStyle: {
-            width: 10
+          query: {
+            maxWidth: 768
           },
-          data: cumulativeValues,
+          option: {
+            title: {
+              textStyle: {
+                fontSize: 16
+              }
+            },
+            toolbox: {
+              show: false
+            },
+            xAxis: {
+              axisLabel: {
+                fontSize: 14
+              }
+            },
+            yAxis: {
+              axisLabel: {
+                fontSize: 18
+              }
+            },
+            series: [
+              {
+                lineStyle: {
+                  width: 5
+                }
+              }
+            ]
+          }
         }
       ]
     };
@@ -149,6 +178,7 @@
   populateDatePicker();
   datePicker.addEventListener('change', updateChart);
   updateChart();
+
   window.addEventListener('resize', function() {
     myChart.resize();
   });
