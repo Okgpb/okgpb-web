@@ -331,5 +331,14 @@
             "CLANKERUSDT": "30.00%",
             "FUSDT": "30.00%"
         }
+    },
+    {
+        "date": "2025-10-25",
+        "total": -10.28,
+        "trades": {
+            "CLANKERUSDT": "-3.32%",
+            "HUSDT": "-19.04%",
+            "VIRTUALUSDT": "-8.48%"
+        }
     }
 ]
