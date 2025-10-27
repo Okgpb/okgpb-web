@@ -340,5 +340,14 @@
             "HUSDT": "-19.04%",
             "VIRTUALUSDT": "-8.48%"
         }
+    },
+    {
+        "date": "2025-10-26",
+        "total": -4.01,
+        "trades": {
+            "CLANKERUSDT": "-20.00%",
+            "MAVIAUSDT": "4.79%",
+            "ZENUSDT": "3.17%"
+        }
     }
 ]
