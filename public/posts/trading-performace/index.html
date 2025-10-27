@@ -69,6 +69,161 @@
 </header>
 
     
+
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+
+  .post {
+    margin-top: 50px;
+  }
+  .main-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .left-column {
+    flex: 1;
+    min-width: 300px;
+  }
+  .right-column {
+    flex-basis: 300px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding-left: 20px;
+    border-left: 1px solid #e0e0e0;
+  }
+
+  #main-chart {
+    width: 100%;
+    height: 70vh;
+    min-height: 400px;
+  }
+  #recent-trades-container {
+    height: 70vh;
+    min-height: 400px;
+    overflow-y: auto;
+  }
+  .date-selector-container {
+    margin-bottom: 10px;
+  }
+  .date-selector-container label {
+    font-weight: bold;
+  }
+  .date-selector-container select {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+
+  .stats-footer {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+  }
+  .stats-footer h2 {
+    text-align: center;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  #stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 150px);
+    gap: 15px;
+    text-align: center;
+    justify-content: center;
+  }
+  .stat-card {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 10px 15px;
+    width: 150px;
+    box-sizing: border-box;
+  }
+  .stat-card h3 {
+    font-size: 0.9em;
+    color: #6c757d;
+    margin: 0 0 5px 0;
+    font-weight: 500;
+  }
+  .stat-card p {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .right-column h2 {
+    font-size: 24px;
+    margin-top: 40px;
+    font-weight: bold;
+  }
+  .trade-day-container {
+    margin-bottom: 0px;
+  }
+  .trade-day-container h3 {
+    font-size: 1.2em;
+    border-bottom: 3px solid #ccc;
+    padding-bottom: 4px;
+    margin-bottom: 6px;
+  }
+  .trade-day-container ul {
+    padding-left: 0;
+    margin: 0;
+  }
+  .trade-day-container li {
+    list-style: none;
+    margin: 1px 0;
+    font-weight: 500;
+  }
+  .no-trade-message {
+    color: #888;
+  }
+
+  @media (max-width: 992px) {
+    .main-container {
+      flex-direction: column;
+    }
+    .right-column {
+      width: 100%;
+      flex-basis: auto;
+      padding-left: 0;
+      border-left: none;
+      margin-top: 20px;
+    }
+    #main-chart {
+      height: 45vh;
+      min-height: 350px;
+    }
+    #recent-trades-container {
+      height: 300px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .post {
+      margin-top: 10px;
+    }
+    .post-title {
+      font-size: 1.5em;
+    }
+    #main-chart {
+      height: 40vh;
+      min-height: 300px;
+    }
+    .stats-footer h2,
+    .right-column h2 {
+      font-size: 1.2em;
+    }
+    .stat-card p {
+      font-size: 1.3em;
+    }
+  }
+</style>
+
 <article class="post">
   <header class="post-header">
     <h1 class="post-title">Trading Performance</h1>
@@ -77,12 +232,27 @@
     
   </div>
 
-  <div style="margin-bottom: 20px;">
-    <label for="startDateSelector" style="font-weight: bold;">选择初始计算日期: </label>
-    <select id="startDateSelector" style="padding: 5px; border-radius: 4px;"></select>
+  <div class="main-container">
+
+    <div class="left-column">
+      <div class="date-selector-container">
+        <label for="startDateSelector">选择初始计算日期: </label>
+        <select id="startDateSelector"></select>
+      </div>
+      <div id="main-chart"></div>
+    </div>
+
+    <div class="right-column">
+      <h2>近一周交易详情</h2>
+      <div id="recent-trades-container"></div>
+    </div>
+
   </div>
 
-  <div id="main-chart" style="width: 100%; height:80vh; min-height: 400px;"></div>
+  <div class="stats-footer">
+    <h2>核心指标</h2>
+    <div id="stats-container"></div>
+  </div>
 
 </article>
 
@@ -95,9 +265,8 @@
   var myChart = echarts.init(document.getElementById('main-chart'), 'walden');
   
   var datePicker = document.getElementById('startDateSelector');
-  var allPerformanceData = [{"date":"2025.9.14","total":16,"trades":{"FUSDT":"16.00%","HIFIUSDT":"16.00%","PUMPBTCUSDT":"16.00%"}},{"date":"2025.9.15","total":0,"trades":{"AVNTUSDT":"-10.00%","PINGPONGUSDT":"20.00%","ZKCUSDT":"-10.00%"}},{"date":"2025.9.16","total":-4.9,"trades":{"PROMUSDT":"-4.50%","REXUSDT":"-6.20%","XCXUSDT":"-4.10%"}},{"date":"2025.9.18","total":-3.1,"trades":{"FTTUSDT":"-5.00%","KMNOUSDT":"-1.20%","MOODENGUSDT":"-3.00%"}},{"date":"2025.9.19","total":4.1,"trades":{"AINUSDT":"2.00%","DUCKUSDT":"10.00%","MUSDT":"0.20%"}},{"date":"2025.9.20","total":-2.7,"trades":{"BIOUSDT":"-1.40%","RDACUSDT":"-5.00%","WUSDT":"-1.70%"}},{"date":"2025.9.21","total":0,"trades":{"GATAUSDT":"-8.00%","KILOUSDT":"-8.00%","PUMPBTCUSDT":"16.00%"}},{"date":"2025.9.22","total":0,"trades":{"GORKUSDT":"-8.00%","PUMPBTCUSDT":"16.00%","RIVERUSDT":"-8.00%"}},{"date":"2025.9.23","total":8.9,"trades":{"BARDUSDT":"-5.30%","GATAUSDT":"16.00%","SIGNUSDT":"16.00%"}},{"date":"2025.9.24","total":0,"trades":{"INUSDT":"16.00%","RIVERUSDT":"-8.00%","UXLINKUSDT":"-8.00%"}},{"date":"2025.9.25","total":2.3,"trades":{"BSUUSDT":"16.00%","BTRUSDT":"-1.10%","SPONUSDT":"-8.00%"}},{"date":"2025.9.26","total":-0.1,"trades":{"SKATEUSDT":"-8.00%","SNXUSDT":"-8.00%","XPLUSDT":"15.70%"}},{"date":"2025.9.27","total":0.5,"trades":{"ALPINEUSDT":"16.00%","KILOUSDT":"-8.00%","MYXUSDT":"-6.60%"}},{"date":"2025.9.28","total":2.7,"trades":{"HUSDT":"0.00%","RFCUSDT":"16.00%","SPONUSDT":"-8.00%"}},{"date":"2025.9.29","total":-3.9,"trades":{"DOODUSDT":"-8.00%","ORDERUSDT":"4.30%","SUPERUSDT":"-8.00%"}},{"date":"2025.9.30","total":-8,"trades":{"EDENUSDT":"-8.00%","SWTCHUSDT":"-8.00%","TOMAUSDT":"-8.00%"}},{"date":"2025.10.1","total":8,"trades":{"LAUNCHCOINUSDT":"16.00%","SOMIUSDT":"-8.00%","SWTCHUSDT":"16.00%"}},{"date":"2025.10.4","total":0,"trades":{"AIAUSDT":"16.00%","COAUSDT":"-8.00%","RFCUSDT":"-8.00%"}},{"date":"2025.10.5","total":0,"trades":{"CELOUSDT":"-8.00%","MLUSDT":"16.00%","TUTUSDT":"-8.00%"}},{"date":"2025.10.6","total":0,"trades":{"BLESSUSDT":"-8.00%","EPTUSDT":"16.00%","REXUSDT":"-8.00%"}},{"date":"2025.10.7","total":-5.3,"trades":{"COAIUSDT":"0.10%","DOODUSDT":"-8.00%","SOONUSDT":"-8.00%"}},{"date":"2025.10.8","total":8,"trades":{"BOOMSDT":"16.00%","CHEEMSUSDT":"16.00%","MASUSDT":"-8.00%"}},{"date":"2025.10.9","total":2.7,"trades":{"BLUMUSDT":"-8.00%","MOREUSDT":"0.00%","ZORAUSDT":"16.00%"}},{"date":"2025.10.10","total":0,"trades":{"INUSDT":"-8.00%","KGENUSDT":"16.00%","ZORAUSDT":"-8.00%"}},{"date":"2025.10.11","total":16,"trades":{"COAUSDT":"16.00%","RFCUSDT":"16.00%","ZEREBROUSDT":"16.00%"}},{"date":"2025.10.13","total":-8,"trades":{"SNXUSDT":"-8.00%","TAGUSDT":"-8.00%","UXLINKUSDT":"-8.00%"}},{"date":"2025-10-14","total":0,"trades":{"FLKUSDT":"16.00%","HUSDT":"-8.00%","KGENUSDT":"-8.00%"}},{"date":"2025-10-15","total":-8,"trades":{"BLESSUSDT":"-8.00%","COAIUSDT":"-8.00%","YBUSDT":"-8.00%"}},{"date":"2025-10-16","total":16,"trades":{"BLESSUSDT":"16.00%","KGENUSDT":"16.00%","LABUSDT":"16.00%"}},{"date":"2025-10-17","total":0,"trades":{"AIOUSDT":"-8.00%","FROGGIEUSDT":"-8.00%","LABUSDT":"16.00%"}},{"date":"2025-10-18","total":-10.13,"trades":{"RECALLUSDT":"-9.26%","RIVERUSDT":"-14.95%","TOWNSUSDT":"-6.19%"}},{"date":"2025-10-19","total":-2.47,"trades":{"HUSDT":"-2.38%","LIGHTUSDT":"2.28%","ULTIUSDT":"-7.32%"}},{"date":"2025-10-20","total":1.67,"trades":{"AIAUSDT":"30.00%","AUCTIONUSDT":"-12.96%","BIOUSDT":"-12.04%"}},{"date":"2025-10-21","total":2.92,"trades":{"AIAUSDT":"30.00%","COAIUSDT":"-1.24%","RIVERUSDT":"-20.00%"}},{"date":"2025-10-22","total":6.72,"trades":{"COAIUSDT":"23.05%","IDOLUSDT":"2.55%","UNITEUSDT":"-5.44%"}},{"date":"2025-10-23","total":9.59,"trades":{"COAIUSDT":"8.86%","METUSDT":"7.69%","RVVUSDT":"12.23%"}}];
+  var allPerformanceData = [{"date":"2025-09-14","total":16,"trades":{"FUSDT":"16.00%","HIFIUSDT":"16.00%","PUMPBTCUSDT":"16.00%"}},{"date":"2025-09-15","total":0,"trades":{"AVNTUSDT":"-10.00%","PINGPONGUSDT":"20.00%","ZKCUSDT":"-10.00%"}},{"date":"2025-09-16","total":-4.9,"trades":{"PROMUSDT":"-4.50%","REXUSDT":"-6.20%","XCXUSDT":"-4.10%"}},{"date":"2025-09-18","total":-3.1,"trades":{"FTTUSDT":"-5.00%","KMNOUSDT":"-1.20%","MOODENGUSDT":"-3.00%"}},{"date":"2025-09-19","total":4.1,"trades":{"AINUSDT":"2.00%","DUCKUSDT":"10.00%","MUSDT":"0.20%"}},{"date":"2025-09-20","total":-2.7,"trades":{"BIOUSDT":"-1.40%","RDACUSDT":"-5.00%","WUSDT":"-1.70%"}},{"date":"2025-09-21","total":0,"trades":{"GATAUSDT":"-8.00%","KILOUSDT":"-8.00%","PUMPBTCUSDT":"16.00%"}},{"date":"2025-09-22","total":0,"trades":{"GORKUSDT":"-8.00%","PUMPBTCUSDT":"16.00%","RIVERUSDT":"-8.00%"}},{"date":"2025-09-23","total":8.9,"trades":{"BARDUSDT":"-5.30%","GATAUSDT":"16.00%","SIGNUSDT":"16.00%"}},{"date":"2025-09-24","total":0,"trades":{"INUSDT":"16.00%","RIVERUSDT":"-8.00%","UXLINKUSDT":"-8.00%"}},{"date":"2025-09-25","total":2.3,"trades":{"BSUUSDT":"16.00%","BTRUSDT":"-1.10%","SPONUSDT":"-8.00%"}},{"date":"2025-09-26","total":-0.1,"trades":{"SKATEUSDT":"-8.00%","SNXUSDT":"-8.00%","XPLUSDT":"15.70%"}},{"date":"2025-09-27","total":0.5,"trades":{"ALPINEUSDT":"16.00%","KILOUSDT":"-8.00%","MYXUSDT":"-6.60%"}},{"date":"2025-09-28","total":2.7,"trades":{"HUSDT":"0.00%","RFCUSDT":"16.00%","SPONUSDT":"-8.00%"}},{"date":"2025-09-29","total":-3.9,"trades":{"DOODUSDT":"-8.00%","ORDERUSDT":"4.30%","SUPERUSDT":"-8.00%"}},{"date":"2025-09-30","total":-8,"trades":{"EDENUSDT":"-8.00%","SWTCHUSDT":"-8.00%","TOMAUSDT":"-8.00%"}},{"date":"2025-10-01","total":8,"trades":{"LAUNCHCOINUSDT":"16.00%","SOMIUSDT":"-8.00%","SWTCHUSDT":"16.00%"}},{"date":"2025-10-04","total":0,"trades":{"AIAUSDT":"16.00%","COAUSDT":"-8.00%","RFCUSDT":"-8.00%"}},{"date":"2025-10-05","total":0,"trades":{"CELOUSDT":"-8.00%","MLUSDT":"16.00%","TUTUSDT":"-8.00%"}},{"date":"2025-10-06","total":0,"trades":{"BLESSUSDT":"-8.00%","EPTUSDT":"16.00%","REXUSDT":"-8.00%"}},{"date":"2025-10-07","total":-5.3,"trades":{"COAIUSDT":"0.10%","DOODUSDT":"-8.00%","SOONUSDT":"-8.00%"}},{"date":"2025-10-08","total":8,"trades":{"BOOMSDT":"16.00%","CHEEMSUSDT":"16.00%","MASUSDT":"-8.00%"}},{"date":"2025-10-09","total":2.7,"trades":{"BLUMUSDT":"-8.00%","MOREUSDT":"0.00%","ZORAUSDT":"16.00%"}},{"date":"2025-10-10","total":0,"trades":{"INUSDT":"-8.00%","KGENUSDT":"16.00%","ZORAUSDT":"-8.00%"}},{"date":"2025-10-11","total":16,"trades":{"COAUSDT":"16.00%","RFCUSDT":"16.00%","ZEREBROUSDT":"16.00%"}},{"date":"2025-10-13","total":-8,"trades":{"SNXUSDT":"-8.00%","TAGUSDT":"-8.00%","UXLINKUSDT":"-8.00%"}},{"date":"2025-10-14","total":0,"trades":{"FLKUSDT":"16.00%","HUSDT":"-8.00%","KGENUSDT":"-8.00%"}},{"date":"2025-10-15","total":-8,"trades":{"BLESSUSDT":"-8.00%","COAIUSDT":"-8.00%","YBUSDT":"-8.00%"}},{"date":"2025-10-16","total":16,"trades":{"BLESSUSDT":"16.00%","KGENUSDT":"16.00%","LABUSDT":"16.00%"}},{"date":"2025-10-17","total":0,"trades":{"AIOUSDT":"-8.00%","FROGGIEUSDT":"-8.00%","LABUSDT":"16.00%"}},{"date":"2025-10-18","total":-10.13,"trades":{"RECALLUSDT":"-9.26%","RIVERUSDT":"-14.95%","TOWNSUSDT":"-6.19%"}},{"date":"2025-10-19","total":-2.47,"trades":{"HUSDT":"-2.38%","LIGHTUSDT":"2.28%","ULTIUSDT":"-7.32%"}},{"date":"2025-10-20","total":1.67,"trades":{"AIAUSDT":"30.00%","AUCTIONUSDT":"-12.96%","BIOUSDT":"-12.04%"}},{"date":"2025-10-21","total":2.92,"trades":{"AIAUSDT":"30.00%","COAIUSDT":"-1.24%","RIVERUSDT":"-20.00%"}},{"date":"2025-10-22","total":6.72,"trades":{"COAIUSDT":"23.05%","IDOLUSDT":"2.55%","UNITEUSDT":"-5.44%"}},{"date":"2025-10-23","total":9.59,"trades":{"COAIUSDT":"8.86%","METUSDT":"7.69%","RVVUSDT":"12.23%"}},{"date":"2025-10-24","total":13.33,"trades":{"APRUSDT":"-20.00%","CLANKERUSDT":"30.00%","FUSDT":"30.00%"}},{"date":"2025-10-25","total":-10.28,"trades":{"CLANKERUSDT":"-3.32%","HUSDT":"-19.04%","VIRTUALUSDT":"-8.48%"}},{"date":"2025-10-26","total":-4.01,"trades":{"CLANKERUSDT":"-20.00%","MAVIAUSDT":"4.79%","ZENUSDT":"3.17%"}}];
 
-  
   function calculateCumulativeReturn(data, startDate) {
     const startIndex = data.findIndex(item => item.date === startDate);
     if (startIndex === -1) return [];
@@ -116,6 +285,7 @@
     });
     return cumulativeData;
   }
+
   function populateDatePicker() {
     allPerformanceData.forEach(item => {
       const option = document.createElement('option');
@@ -130,128 +300,195 @@
     const chartData = calculateCumulativeReturn(allPerformanceData, selectedStartDate);
     const dates = chartData.map(item => item.date);
     const cumulativeValues = chartData.map(item => item.cumulative.toFixed(2));
-
     var option = {
-      baseOption: {
-        title: {
-          text: '策略累计收益率曲线',
-          left: 'center',
-          textStyle: { fontWeight: 'bold', fontSize: 36, fontFamily: 'Century Gothic' }
-        },
-        tooltip: {
-          trigger: 'axis',
-          formatter: function (params) {
-            const dataIndex = params[0].dataIndex;
-            const dayData = chartData[dataIndex];
-            if (!dayData) return;
-            const cumulativeColor = dayData.cumulative >= 0 ? '#16a34a' : '#dc2626';
-            const dailyColor = dayData.dailyTotal >= 0 ? '#16a34a' : '#dc2626';
-            let tooltipHtml = `<strong>日期: ${dayData.date}</strong><br/>`;
-            tooltipHtml += `<strong style="color: ${cumulativeColor};">累计收益率: ${dayData.cumulative.toFixed(2)}%</strong><br/>`;
-            tooltipHtml += `<span style="color: ${dailyColor};">当日总盈亏: ${dayData.dailyTotal}%</span>`;
-            if (dayData.trades && Object.keys(dayData.trades).length > 0) {
-              tooltipHtml += '<hr style="margin: 5px 0; border-color: #aaa;">';
-              tooltipHtml += '<strong>当日交易详情:</strong><br/>';
-              for (const coin in dayData.trades) {
-                const tradeValue = parseFloat(dayData.trades[coin]);
-                const tradeColor = tradeValue >= 0 ? '#16a34a' : '#dc2626';
-                tooltipHtml += `<span style="color: ${tradeColor};">${coin}: &nbsp; ${dayData.trades[coin]}</span><br/>`;
+        baseOption: {
+          title: {
+            text: '策略累计收益率曲线',
+            left: 'center',
+            textStyle: { fontWeight: 'bold', fontSize: 24, } 
+          },
+          tooltip: {
+            trigger: 'axis',
+            formatter: function (params) {
+              const dataIndex = params[0].dataIndex;
+              const dayData = chartData[dataIndex];
+              if (!dayData) return;
+              const cumulativeColor = dayData.cumulative >= 0 ? '#16a34a' : '#dc2626';
+              const dailyColor = dayData.dailyTotal >= 0 ? '#16a34a' : '#dc2626';
+              let tooltipHtml = `<strong>日期: ${dayData.date}</strong><br/>`;
+              tooltipHtml += `<strong style="color: ${cumulativeColor};">累计收益率: ${dayData.cumulative.toFixed(2)}%</strong><br/>`;
+              tooltipHtml += `<span style="color: ${dailyColor};">当日总盈亏: ${dayData.dailyTotal}%</span>`;
+              if (dayData.trades && Object.keys(dayData.trades).length > 0) {
+                tooltipHtml += '<hr style="margin: 5px 0; border-color: #aaa;">';
+                tooltipHtml += '<strong>当日交易详情:</strong><br/>';
+                for (const coin in dayData.trades) {
+                  const tradeValue = parseFloat(dayData.trades[coin]);
+                  const tradeColor = tradeValue >= 0 ? '#16a34a' : '#dc2626';
+                  tooltipHtml += `<span style="color: ${tradeColor};">${coin}: &nbsp; ${dayData.trades[coin]}</span><br/>`;
+                }
               }
+              return tooltipHtml;
             }
-            return tooltipHtml;
-          }
-        },
-        grid: { left: '3%', right: '4%', bottom: '15%', containLabel: true },
-        toolbox: {
-          feature: {
-            dataZoom: { yAxisIndex: 'none' },
-            restore: {},
-            saveAsImage: {}
-          }
-        },
-        xAxis: {
-          type: 'category',
-          boundaryGap: false,
-          data: dates,
-          axisLabel: {
-            fontWeight: 'bold',
-            fontSize: 18,
-            fontFamily: 'Century Gothic',
-            formatter: function (value) {
+          },
+          grid: { left: '3%', right: '4%', bottom: '15%', containLabel: true },
+          toolbox: { feature: { dataZoom: { yAxisIndex: 'none' }, restore: {}, saveAsImage: {} } },
+          xAxis: {
+            type: 'category', boundaryGap: false, data: dates,
+            axisLabel: { 
+              fontWeight: 'bold', 
+              fontSize: 24,
+              formatter: function (value) {
                 if (typeof value === 'string' && value.length > 0) {
-                    let parts = value.split('.');
-                    if (parts.length === 3) { return parts[1] + '.' + parts[2]; }
-                    parts = value.split('-');
-                    if (parts.length === 3) { return parts[1] + '-' + parts[2]; }
+                  let parts = value.split('.');
+                  if (parts.length === 3) { return parts[1] + '.' + parts[2]; }
+                  parts = value.split('-');
+                  if (parts.length === 3) { return parts[1] + '-' + parts[2]; }
                 }
                 return value;
+              }
             }
-          }
-        },
-        yAxis: {
-          type: 'value',
-          axisLabel: { formatter: '{value} %', fontWeight: 'bold', fontSize: 36, fontFamily: 'Century Gothic' },
-          min: -20,
-          max: 100
-        },
-        dataZoom: [ { type: 'inside' }, { start: 0, end: 100 } ],
-        series: [
-          {
-            name: '累计收益率',
-            type: 'line',
-            smooth: false,
-            symbol: 'none',
-            lineStyle: { width: 10 },
-            data: cumulativeValues,
-          }
-        ]
-      },
-      media: [
-        {
-          query: {
-            maxWidth: 768
           },
+          yAxis: { 
+            type: 'value', 
+            axisLabel: { 
+              formatter: '{value} %', 
+              fontWeight: 'bold', 
+              fontSize: 32, 
+            }, 
+            min: -20, 
+            max: 100 
+          },
+          dataZoom: [ { type: 'inside' }, { start: 0, end: 100 } ],
+          series: [ { name: '累计收益率', type: 'line', smooth: false, symbol: 'none', lineStyle: { width: 4 }, data: cumulativeValues } ]
+      },
+      media: [ {
+          query: { maxWidth: 768 },
           option: {
-            title: {
-              textStyle: {
-                fontSize: 16
-              }
-            },
-            toolbox: {
-              show: false
-            },
-            xAxis: {
-              axisLabel: {
-                fontSize: 14
-              }
-            },
-            yAxis: {
-              axisLabel: {
-                fontSize: 18
-              }
-            },
-            series: [
-              {
-                lineStyle: {
-                  width: 5
-                }
-              }
-            ]
+            title: { textStyle: { fontSize: 16 } },
+            toolbox: { show: false },
+            xAxis: { axisLabel: { fontSize: 12 } },
+            yAxis: { axisLabel: { fontSize: 18 } }, 
+            series: [ { lineStyle: { width: 3 } } ]
           }
         }
       ]
     };
-    
     myChart.setOption(option);
   }
 
-  populateDatePicker();
-  datePicker.addEventListener('change', updateChart);
-  updateChart();
+  function calculatePeriodStats(dataSlice) {
+    if (dataSlice.length === 0) return { cumulativeReturn: 0, winRate: 0 };
+    
+    let cumulativeProduct = 1.0;
+    dataSlice.forEach(item => {
+      cumulativeProduct *= (1 + item.total / 100);
+    });
+    const cumulativeReturn = (cumulativeProduct - 1) * 100;
 
-  window.addEventListener('resize', function() {
-    myChart.resize();
-  });
+    let winningTrades = 0, totalTrades = 0;
+    dataSlice.forEach(day => {
+      if (day.trades) {
+        Object.values(day.trades).forEach(tradeValue => {
+          totalTrades++;
+          if (parseFloat(tradeValue) > 0) winningTrades++;
+        });
+      }
+    });
+    const winRate = totalTrades === 0 ? 0 : (winningTrades / totalTrades) * 100;
+    
+    return { cumulativeReturn, winRate };
+  }
+
+  function calculateGlobalStats(data) {
+    if (!data || data.length < 2) {
+      return { totalReturn: 0, annualizedReturn: 0, maxDrawdown: 0, sharpeRatio: 0, overallWinRate: 0 };
+    }
+    const dailyReturns = data.map(d => d.total / 100);
+    const days = data.length;
+
+    const totalReturn = (dailyReturns.reduce((acc, r) => acc * (1 + r), 1.0) - 1) * 100;
+    const annualizedReturn = (Math.pow(1 + totalReturn / 100, 365 / days) - 1) * 100;
+    
+    let peak = -Infinity, maxDrawdown = 0, cumulativeValue = 1.0;
+    dailyReturns.forEach(r => {
+      cumulativeValue *= (1 + r);
+      peak = Math.max(peak, cumulativeValue);
+      const drawdown = (peak - cumulativeValue) / peak;
+      maxDrawdown = Math.max(maxDrawdown, drawdown);
+    });
+
+    const meanReturn = dailyReturns.reduce((a, b) => a + b, 0) / days;
+    const stdDev = Math.sqrt(dailyReturns.map(r => Math.pow(r - meanReturn, 2)).reduce((a, b) => a + b, 0) / days);
+    const sharpeRatio = stdDev === 0 ? 0 : (meanReturn / stdDev) * Math.sqrt(365);
+
+    const { winRate: overallWinRate } = calculatePeriodStats(data);
+    
+    return { totalReturn, annualizedReturn, maxDrawdown: maxDrawdown * 100, sharpeRatio, overallWinRate };
+  }
+  function updateAllStatsDisplays() {
+    const globalStats = calculateGlobalStats(allPerformanceData);
+    const stats7days = calculatePeriodStats(allPerformanceData.slice(-7));
+    const stats30days = calculatePeriodStats(allPerformanceData.slice(-30));
+    
+    const container = document.getElementById('stats-container');
+    const positiveColor = '#16a34a', negativeColor = '#dc2626', neutralColor = '#333';
+
+    function createStatCard(title, value, unit = '', color = neutralColor) {
+      return `
+        <div class="stat-card">
+          <h3>${title}</h3>
+          <p style="color: ${color};">${value}${unit}</p>
+        </div>
+      `;
+    }
+
+    container.innerHTML = 
+      createStatCard('总累计收益率', globalStats.totalReturn.toFixed(2), '%', globalStats.totalReturn >= 0 ? positiveColor : negativeColor) +
+      createStatCard('年化收益率', globalStats.annualizedReturn.toFixed(2), '%', globalStats.annualizedReturn >= 0 ? positiveColor : negativeColor) +
+      createStatCard('最大回撤', globalStats.maxDrawdown.toFixed(2), '%', negativeColor) +
+      createStatCard('夏普比率', globalStats.sharpeRatio.toFixed(2), '', globalStats.sharpeRatio >= 0 ? positiveColor : negativeColor) +
+      createStatCard('总胜率', globalStats.overallWinRate.toFixed(1), '%') +
+      createStatCard('近7天收益', stats7days.cumulativeReturn.toFixed(2), '%', stats7days.cumulativeReturn >= 0 ? positiveColor : negativeColor) +
+      createStatCard('近30天收益', stats30days.cumulativeReturn.toFixed(2), '%', stats30days.cumulativeReturn >= 0 ? positiveColor : negativeColor);
+  }
+
+  function updateRecentTradesDisplay() {
+    const recent7DaysData = allPerformanceData.slice(-6).reverse();
+    const container = document.getElementById('recent-trades-container');
+    let htmlContent = '';
+    const positiveColor = '#16a34a', negativeColor = '#dc2626';
+
+    if (recent7DaysData.length === 0) {
+      htmlContent = '<p>暂无交易数据</p>';
+    } else {
+      recent7DaysData.forEach(dayData => {
+        htmlContent += `<div class="trade-day-container"><h3>${dayData.date}</h3>`;
+        const trades = dayData.trades;
+        if (trades && Object.keys(trades).length > 0) {
+          htmlContent += '<ul>';
+          for (const coin in trades) {
+            const value = parseFloat(trades[coin]);
+            const color = value >= 0 ? positiveColor : negativeColor;
+            htmlContent += `<li style="color: ${color};">${coin}: ${trades[coin]}</li>`;
+          }
+          htmlContent += '</ul>';
+        } else {
+          htmlContent += '<p class="no-trade-message">当日无交易</p>';
+        }
+        htmlContent += `</div>`;
+      });
+    }
+    container.innerHTML = htmlContent;
+  }
+
+  populateDatePicker();
+  updateChart();
+  updateAllStatsDisplays();
+  updateRecentTradesDisplay();
+
+  datePicker.addEventListener('change', updateChart);
+  window.addEventListener('resize', () => myChart.resize());
+
 </script>
 
 
