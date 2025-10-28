@@ -349,5 +349,14 @@
             "MAVIAUSDT": "4.79%",
             "ZENUSDT": "3.17%"
         }
+    },
+    {
+        "date": "2025-10-27",
+        "total": -6.67,
+        "trades": {
+            "MATUSDT": "-14.83%",
+            "MAVIAUSDT": "-7.57%",
+            "BGSCUSDT": "2.39%"
+        }
     }
 ]
