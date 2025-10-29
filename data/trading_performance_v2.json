@@ -358,5 +358,14 @@
             "MAVIAUSDT": "-7.57%",
             "BGSCUSDT": "2.39%"
         }
+    },
+    {
+        "date": "2025-10-28",
+        "total": -12.79,
+        "trades": {
+            "PUFFERUSDT": "-20.00%",
+            "B2USDT": "-20.00%",
+            "MELANIAUSDT": "1.63%"
+        }
     }
 ]
