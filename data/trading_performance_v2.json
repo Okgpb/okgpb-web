@@ -385,5 +385,14 @@
             "JELLYJELLYUSDT": "10.28%",
             "BUSDT": "-1.05%"
         }
+    },
+    {
+        "date": "2025-10-31",
+        "total": -2.88,
+        "trades": {
+            "PIPPINUSDT": "16.12%",
+            "ICNTUSDT": "-9.87%",
+            "LABUSDT": "-14.88%"
+        }
     }
 ]
