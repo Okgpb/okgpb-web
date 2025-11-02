@@ -394,5 +394,14 @@
             "ICNTUSDT": "-9.87%",
             "LABUSDT": "-14.88%"
         }
+    },
+    {
+        "date": "2025-11-01",
+        "total": 4.63,
+        "trades": {
+            "ZKUSDT": "4.13%",
+            "ZENUSDT": "5.97%",
+            "VIRTUALUSDT": "3.80%"
+        }
     }
 ]
