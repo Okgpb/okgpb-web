@@ -403,5 +403,14 @@
             "ZENUSDT": "5.97%",
             "VIRTUALUSDT": "3.80%"
         }
+    },
+    {
+        "date": "2025-11-02",
+        "total": -11.73,
+        "trades": {
+            "ZKUSDT": "-10.40%",
+            "MINAUSDT": "-12.06%",
+            "ASTERUSDT": "-12.74%"
+        }
     }
 ]
