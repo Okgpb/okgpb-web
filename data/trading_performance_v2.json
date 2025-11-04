@@ -412,5 +412,14 @@
             "MINAUSDT": "-12.06%",
             "ASTERUSDT": "-12.74%"
         }
+    },
+    {
+        "date": "2025-11-03",
+        "total": 7.12,
+        "trades": {
+            "JELLYJELLYUSDT": "30.00%",
+            "0GUSDT": "8.90%",
+            "PORTALSUSDT": "-17.55%"
+        }
     }
 ]
