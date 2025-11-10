@@ -448,5 +448,14 @@
             "FLUXUSDT": "-6.85%",
             "0GUSDT": "18.07%"
         }
+    },
+    {
+        "date": "2025-11-09",
+        "total": -8.44,
+        "trades": {
+            "APRUSDT": "-20.00%",
+            "SAPIENUSDT": "-13.42%",
+            "KITEUSDT": "8.11%"
+        }
     }
 ]
