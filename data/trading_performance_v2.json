@@ -457,5 +457,14 @@
             "SAPIENUSDT": "-13.42%",
             "KITEUSDT": "8.11%"
         }
+    },
+    {
+        "date": "2025-11-10",
+        "total": -2.89,
+        "trades": {
+            "ALCHUSDT": "4.08%",
+            "COTIUSDT": "-8.51%",
+            "WLFIUSDT": "-4.23%"
+        }
     }
 ]
