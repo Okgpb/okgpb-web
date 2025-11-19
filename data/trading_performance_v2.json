@@ -466,5 +466,14 @@
             "COTIUSDT": "-8.51%",
             "WLFIUSDT": "-4.23%"
         }
+    },
+    {
+        "date": "2025-11-18",
+        "total": -4.14,
+        "trades": {
+            "XPLUSDT": "-10.45%",
+            "CROSSUSDT": "-1.40%",
+            "ASTERUSDT": "-0.56%"
+        }
     }
 ]
