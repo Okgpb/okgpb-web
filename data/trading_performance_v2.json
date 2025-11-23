@@ -475,5 +475,14 @@
             "CROSSUSDT": "-1.40%",
             "ASTERUSDT": "-0.56%"
         }
+    },
+    {
+        "date": "2025-11-22",
+        "total": -7.04,
+        "trades": {
+            "LAYERUSDT": "-16.40%",
+            "PARTIUSDT": "-5.45%",
+            "WLFIUSDT": "0.74%"
+        }
     }
 ]
