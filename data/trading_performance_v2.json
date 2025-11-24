@@ -484,5 +484,14 @@
             "PARTIUSDT": "-5.45%",
             "WLFIUSDT": "0.74%"
         }
+    },
+    {
+        "date": "2025-11-23",
+        "total": -16.24,
+        "trades": {
+            "TNSRUSDT": "-20.00%",
+            "GAIBUSDT": "-20.00%",
+            "DMCUSDT": "-8.72%"
+        }
     }
 ]
