@@ -493,5 +493,14 @@
             "GAIBUSDT": "-20.00%",
             "DMCUSDT": "-8.72%"
         }
+    },
+    {
+        "date": "2025-11-26",
+        "total": -9.6,
+        "trades": {
+            "XIONUSDT": "-20.00%",
+            "IRYSUSDT": "-5.83%",
+            "TACUSDT": "-2.98%"
+        }
     }
 ]
