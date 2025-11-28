@@ -502,5 +502,14 @@
             "IRYSUSDT": "-5.83%",
             "TACUSDT": "-2.98%"
         }
+    },
+    {
+        "date": "2025-11-27",
+        "total": 5.79,
+        "trades": {
+            "TRADOORUSDT": "30.00%",
+            "ORCAUSDT": "-8.97%",
+            "ARIAUSDT": "-3.65%"
+        }
     }
 ]
