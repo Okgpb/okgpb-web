@@ -511,5 +511,14 @@
             "ORCAUSDT": "-8.97%",
             "ARIAUSDT": "-3.65%"
         }
+    },
+    {
+        "date": "2025-11-28",
+        "total": 0.72,
+        "trades": {
+            "TURBOUSDT": "-6.34%",
+            "TRADOORUSDT": "14.25%",
+            "BANANAUSDT": "-5.76%"
+        }
     }
 ]
