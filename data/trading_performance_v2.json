@@ -520,5 +520,14 @@
             "TRADOORUSDT": "14.25%",
             "BANANAUSDT": "-5.76%"
         }
+    },
+    {
+        "date": "2025-11-30",
+        "total": -0.38,
+        "trades": {
+            "ALCHUSDT": "3.04%",
+            "LSKUSDT": "-11.03%",
+            "TRADOORUSDT": "6.84%"
+        }
     }
 ]
