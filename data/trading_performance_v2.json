@@ -529,5 +529,14 @@
             "LSKUSDT": "-11.03%",
             "TRADOORUSDT": "6.84%"
         }
+    },
+    {
+        "date": "2025-12-02",
+        "total": -8.54,
+        "trades": {
+            "RLSUSDT": "-20.00%",
+            "PARTIUSDT": "-5.80%",
+            "ALCHUSDT": "0.17%"
+        }
     }
 ]
