@@ -538,5 +538,14 @@
             "PARTIUSDT": "-5.80%",
             "ALCHUSDT": "0.17%"
         }
+    },
+    {
+        "date": "2025-12-03",
+        "total": 3.13,
+        "trades": {
+            "ZECUSDT": "4.91%",
+            "A47USDT": "-9.59%",
+            "SAPIENUSDT": "14.08%"
+        }
     }
 ]
