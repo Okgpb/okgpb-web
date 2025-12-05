@@ -547,5 +547,14 @@
             "A47USDT": "-9.59%",
             "SAPIENUSDT": "14.08%"
         }
+    },
+    {
+        "date": "2025-12-04",
+        "total": -7.73,
+        "trades": {
+            "RECALLUSDT": "-14.57%",
+            "FARTCOINUSDT": "-3.14%",
+            "BARDUSDT": "-5.49%"
+        }
     }
 ]
