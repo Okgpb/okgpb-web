@@ -565,5 +565,14 @@
             "LUNCUSDT": "-20.00%",
             "PUFFERUSDT": "-19.34%"
         }
+    },
+    {
+        "date": "2025-12-08",
+        "total": -1.01,
+        "trades": {
+            "POWERUSDT": "1.93%",
+            "ZECUSDT": "-1.77%",
+            "COMMONUSDT": "-3.19%"
+        }
     }
 ]
