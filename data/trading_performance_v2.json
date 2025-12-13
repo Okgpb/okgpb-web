@@ -583,5 +583,14 @@
             "FHEUSDT": "7.65%",
             "USTCUSDT": "-6.40%"
         }
+    },
+    {
+        "date": "2025-12-12",
+        "total": 12.2,
+        "trades": {
+            "IKAUSDT": "30.00%",
+            "ICNTUSDT": "4.09%",
+            "CYSUSDT": "2.50%"
+        }
     }
 ]
