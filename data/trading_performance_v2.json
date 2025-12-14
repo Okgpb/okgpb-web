@@ -592,5 +592,14 @@
             "ICNTUSDT": "4.09%",
             "CYSUSDT": "2.50%"
         }
+    },
+    {
+        "date": "2025-12-13",
+        "total": 4.93,
+        "trades": {
+            "TREATUSDT": "30.00%",
+            "PROMPTUSDT": "-3.02%",
+            "PSTAKEUSDT": "-12.20%"
+        }
     }
 ]
