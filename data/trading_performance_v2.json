@@ -601,5 +601,14 @@
             "PROMPTUSDT": "-3.02%",
             "PSTAKEUSDT": "-12.20%"
         }
+    },
+    {
+        "date": "2025-12-16",
+        "total": 2.82,
+        "trades": {
+            "PTBUSDT": "30.00%",
+            "SAROSUSDT": "-15.43%",
+            "ACEUSDT": "-6.12%"
+        }
     }
 ]
