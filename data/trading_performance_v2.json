@@ -610,5 +610,14 @@
             "SAROSUSDT": "-15.43%",
             "ACEUSDT": "-6.12%"
         }
+    },
+    {
+        "date": "2025-12-18",
+        "total": -2.86,
+        "trades": {
+            "HMSTRUSDT": "-8.85%",
+            "ICNTUSDT": "-2.97%",
+            "JELLYJELLYUSDT": "3.24%"
+        }
     }
 ]
