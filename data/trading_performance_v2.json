@@ -655,5 +655,14 @@
             "TRADOORUSDT": "-2.99%",
             "ZENUSDT": "-1.40%"
         }
+    },
+    {
+        "date": "2025-12-28",
+        "total": -0.77,
+        "trades": {
+            "RVVUSDT": "8.01%",
+            "STORJUSDT": "-4.93%",
+            "ICNTUSDT": "-5.40%"
+        }
     }
 ]
