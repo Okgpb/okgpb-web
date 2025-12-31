@@ -664,5 +664,14 @@
             "STORJUSDT": "-4.93%",
             "ICNTUSDT": "-5.40%"
         }
+    },
+    {
+        "date": "2025-12-30",
+        "total": -0.95,
+        "trades": {
+            "ELIZAOSUSDT": "1.10%",
+            "TRADOORUSDT": "-0.96%",
+            "WCTUSDT": "-3.00%"
+        }
     }
 ]
