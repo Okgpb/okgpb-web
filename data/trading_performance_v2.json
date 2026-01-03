@@ -673,5 +673,14 @@
             "TRADOORUSDT": "-0.96%",
             "WCTUSDT": "-3.00%"
         }
+    },
+    {
+        "date": "2026-01-02",
+        "total": 1.5,
+        "trades": {
+            "RIVERUSDT": "-9.82%",
+            "PEPEUSDT": "8.50%",
+            "PENGUUSDT": "5.82%"
+        }
     }
 ]
