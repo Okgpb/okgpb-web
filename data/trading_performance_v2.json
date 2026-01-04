@@ -682,5 +682,14 @@
             "PEPEUSDT": "8.50%",
             "PENGUUSDT": "5.82%"
         }
+    },
+    {
+        "date": "2026-01-03",
+        "total": 5.45,
+        "trades": {
+            "BUSDT": "-8.09%",
+            "MYXUSDT": "17.03%",
+            "SAPIENUSDT": "7.41%"
+        }
     }
 ]
