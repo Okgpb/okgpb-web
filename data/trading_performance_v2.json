@@ -691,5 +691,14 @@
             "MYXUSDT": "17.03%",
             "SAPIENUSDT": "7.41%"
         }
+    },
+    {
+        "date": "2026-01-04",
+        "total": 0.93,
+        "trades": {
+            "BROCCOLIUSDT": "9.32%",
+            "BONKUSDT": "-4.98%",
+            "IRYSUSDT": "-1.56%"
+        }
     }
 ]
