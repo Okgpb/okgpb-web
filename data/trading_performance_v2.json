@@ -700,5 +700,14 @@
             "BONKUSDT": "-4.98%",
             "IRYSUSDT": "-1.56%"
         }
+    },
+    {
+        "date": "2026-01-05",
+        "total": 9.79,
+        "trades": {
+            "RIVERUSDT": "30.00%",
+            "IRYSUSDT": "-3.32%",
+            "VIRTUALUSDT": "2.70%"
+        }
     }
 ]
