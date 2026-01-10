@@ -709,5 +709,14 @@
             "IRYSUSDT": "-3.32%",
             "VIRTUALUSDT": "2.70%"
         }
+    },
+    {
+        "date": "2026-01-09",
+        "total": -1.38,
+        "trades": {
+            "BAYUSDT": "-13.07%",
+            "GMTUSDT": "18.15%",
+            "DEEPUSDT": "-9.21%"
+        }
     }
 ]
