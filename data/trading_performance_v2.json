@@ -718,5 +718,14 @@
             "GMTUSDT": "18.15%",
             "DEEPUSDT": "-9.21%"
         }
+    },
+    {
+        "date": "2026-01-11",
+        "total": 1.25,
+        "trades": {
+            "ZEREBROUSDT": "-20.00%",
+            "GAIBUSDT": "30.00%",
+            "HYPERUSDT": "-6.24%"
+        }
     }
 ]
