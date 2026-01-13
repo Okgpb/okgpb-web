@@ -727,5 +727,14 @@
             "GAIBUSDT": "30.00%",
             "HYPERUSDT": "-6.24%"
         }
+    },
+    {
+        "date": "2026-01-12",
+        "total": 5.43,
+        "trades": {
+            "IPUSDT": "6.90%",
+            "RIVERUSDT": "10.44%",
+            "BUSDT": "-1.06%"
+        }
     }
 ]
