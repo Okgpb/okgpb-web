@@ -745,5 +745,14 @@
             "XIONUSDT": "-7.24%",
             "SAFEUSDT": "-4.22%"
         }
+    },
+    {
+        "date": "2026-01-14",
+        "total": 4.73,
+        "trades": {
+            "RIVERUSDT": "30.00%",
+            "BERAUSDT": "-11.99%",
+            "KGENUSDT": "-3.82%"
+        }
     }
 ]
