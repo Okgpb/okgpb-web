@@ -754,5 +754,14 @@
             "BERAUSDT": "-11.99%",
             "KGENUSDT": "-3.82%"
         }
+    },
+    {
+        "date": "2026-01-17",
+        "total": 5.08,
+        "trades": {
+            "AXSUSDT": "-1.29%",
+            "FHEUSDT": "0.62%",
+            "BERAUSDT": "15.91%"
+        }
     }
 ]
