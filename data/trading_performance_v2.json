@@ -763,5 +763,95 @@
             "FHEUSDT": "0.62%",
             "BERAUSDT": "15.91%"
         }
+    },
+    {
+        "date": "2026-01-23",
+        "total": 0.47,
+        "trades": {
+            "KAIAUSDT": "22.06%",
+            "ROLLUSDT": "-15.79%",
+            "ZROUSDT": "-4.86%"
+        }
+    },
+    {
+        "date": "2026-01-27",
+        "total": 1.16,
+        "trades": {
+            "COLLECTUSDT": "1.19%",
+            "HYPEUSDT": "19.67%",
+            "BTRUSDT": "-17.38%"
+        }
+    },
+    {
+        "date": "2026-01-28",
+        "total": -9.95,
+        "trades": {
+            "SOMIUSDT": "-1.80%",
+            "JTOUSDT": "-14.36%",
+            "FRAXUSDT": "-13.70%"
+        }
+    },
+    {
+        "date": "2026-02-02",
+        "total": 2.78,
+        "trades": {
+            "RIVERUSDT": "-20.00%",
+            "ZILUSDT": "30.00%",
+            "STABLEUSDT": "-1.66%"
+        }
+    },
+    {
+        "date": "2026-02-06",
+        "total": -5.01,
+        "trades": {
+            "SKRUSDT": "1.25%",
+            "ZBCNUSDT": "-7.79%",
+            "BIRBUSDT": "-8.49%"
+        }
+    },
+    {
+        "date": "2026-02-07",
+        "total": -5.71,
+        "trades": {
+            "LAUSDT": "-7.75%",
+            "TRADOORUSDT": "-4.71%",
+            "BERAUSDT": "-4.66%"
+        }
+    },
+    {
+        "date": "2026-02-08",
+        "total": 4.1,
+        "trades": {
+            "PENGUINUSDT": "19.79%",
+            "ASTERUSDT": "-1.85%",
+            "FUSDT": "-5.65%"
+        }
+    },
+    {
+        "date": "2026-02-10",
+        "total": -3.03,
+        "trades": {
+            "POWERUSDT": "2.96%",
+            "RIVERUSDT": "-3.67%",
+            "STABLEUSDT": "-8.38%"
+        }
+    },
+    {
+        "date": "2026-02-13",
+        "total": 3.88,
+        "trades": {
+            "HUSDT": "5.15%",
+            "SPACEUSDT": "8.85%",
+            "DEEPUSDT": "-2.36%"
+        }
+    },
+    {
+        "date": "2026-02-14",
+        "total": 11.52,
+        "trades": {
+            "SPACEUSDT": "30.00%",
+            "NAORISUSDT": "-5.24%",
+            "BTRUSDT": "9.79%"
+        }
     }
 ]
