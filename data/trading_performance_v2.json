@@ -853,5 +853,14 @@
             "NAORISUSDT": "-5.24%",
             "BTRUSDT": "9.79%"
         }
+    },
+    {
+        "date": "2026-02-17",
+        "total": -3.25,
+        "trades": {
+            "POWERUSDT": "-5.35%",
+            "JTOUSDT": "-7.08%",
+            "MUSDT": "2.69%"
+        }
     }
 ]
