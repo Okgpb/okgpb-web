@@ -871,5 +871,14 @@
             "ENSOUSDT": "-2.61%",
             "KITEUSDT": "-11.59%"
         }
+    },
+    {
+        "date": "2026-02-21",
+        "total": 1.15,
+        "trades": {
+            "POWERUSDT": "-1.20%",
+            "RAVEUSDT": "8.82%",
+            "INJUSDT": "-4.17%"
+        }
     }
 ]
