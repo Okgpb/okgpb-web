@@ -889,5 +889,14 @@
             "A47USDT": "-5.56%",
             "DOTUSDT": "6.96%"
         }
+    },
+    {
+        "date": "2026-03-01",
+        "total": 2.92,
+        "trades": {
+            "GRASSUSDT": "3.63%",
+            "ZROUSDT": "4.06%",
+            "HYPEUSDT": "1.08%"
+        }
     }
 ]
