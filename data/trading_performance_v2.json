@@ -898,5 +898,14 @@
             "ZROUSDT": "4.06%",
             "HYPEUSDT": "1.08%"
         }
+    },
+    {
+        "date": "2026-03-02",
+        "total": -4.07,
+        "trades": {
+            "ROBOUSDT": "-15.70%",
+            "GRASSUSDT": "-5.13%",
+            "NEARUSDT": "8.61%"
+        }
     }
 ]
