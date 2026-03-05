@@ -907,5 +907,14 @@
             "GRASSUSDT": "-5.13%",
             "NEARUSDT": "8.61%"
         }
+    },
+    {
+        "date": "2026-03-04",
+        "total": 2.82,
+        "trades": {
+            "PHAUSDT": "-1.00%",
+            "CYSUSDT": "3.64%",
+            "BTWUSDT": "5.81%"
+        }
     }
 ]
