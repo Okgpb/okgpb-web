@@ -916,5 +916,14 @@
             "CYSUSDT": "3.64%",
             "BTWUSDT": "5.81%"
         }
+    },
+    {
+        "date": "2026-03-09",
+        "total": -0.82,
+        "trades": {
+            "BTWUSDT": "-7.38%",
+            "ARIAUSDT": "-6.02%",
+            "NAORISUSDT": "10.93%"
+        }
     }
 ]
