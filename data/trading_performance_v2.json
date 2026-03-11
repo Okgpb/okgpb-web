@@ -925,5 +925,14 @@
             "ARIAUSDT": "-6.02%",
             "NAORISUSDT": "10.93%"
         }
+    },
+    {
+        "date": "2026-03-10",
+        "total": -2.67,
+        "trades": {
+            "AINUSDT": "-1.56%",
+            "ARIAUSDT": "-4.62%",
+            "NAORISUSDT": "-1.83%"
+        }
     }
 ]
