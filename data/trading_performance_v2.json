@@ -934,5 +934,14 @@
             "ARIAUSDT": "-4.62%",
             "NAORISUSDT": "-1.83%"
         }
+    },
+    {
+        "date": "2026-03-13",
+        "total": -1.64,
+        "trades": {
+            "TRUMPUSDT": "9.60%",
+            "PIXELUSDT": "-14.42%",
+            "TURBOUSDT": "-0.09%"
+        }
     }
 ]
