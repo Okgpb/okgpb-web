@@ -961,5 +961,14 @@
             "ARIAUSDT": "3.27%",
             "PEPEUSDT": "-0.02%"
         }
+    },
+    {
+        "date": "2026-03-17",
+        "total": -7.16,
+        "trades": {
+            "BANUSDT": "-20.00%",
+            "TRIAUSDT": "-5.42%",
+            "ZECUSDT": "3.95%"
+        }
     }
 ]
