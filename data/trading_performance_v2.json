@@ -970,5 +970,14 @@
             "TRIAUSDT": "-5.42%",
             "ZECUSDT": "3.95%"
         }
+    },
+    {
+        "date": "2026-03-20",
+        "total": -1.4,
+        "trades": {
+            "ATHUSDT": "-4.29%",
+            "IRYSUSDT": "-3.76%",
+            "BTRUSDT": "3.86%"
+        }
     }
 ]
