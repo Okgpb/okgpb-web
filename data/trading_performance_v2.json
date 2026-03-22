@@ -979,5 +979,14 @@
             "IRYSUSDT": "-3.76%",
             "BTRUSDT": "3.86%"
         }
+    },
+    {
+        "date": "2026-03-21",
+        "total": -2.37,
+        "trades": {
+            "POWERUSDT": "-8.46%",
+            "BTRUSDT": "-1.33%",
+            "RIVERUSDT": "2.69%"
+        }
     }
 ]
