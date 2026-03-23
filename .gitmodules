@@ -1,0 +1,3 @@
+[submodule "themes/saral"]
+	path = themes/saral
+	url = https://github.com/dipeshsingh253/saral.git
