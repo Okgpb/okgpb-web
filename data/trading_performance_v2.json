@@ -988,5 +988,14 @@
             "BTRUSDT": "-1.33%",
             "RIVERUSDT": "2.69%"
         }
+    },
+    {
+        "date": "2026-03-23",
+        "total": -6.8,
+        "trades": {
+            "JCTUSDT": "-20.00%",
+            "LIGHTUSDT": "2.27%",
+            "AEROUSDT": "-2.67%"
+        }
     }
 ]
