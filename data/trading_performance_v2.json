@@ -1006,5 +1006,14 @@
             "MUSDT": "11.62%",
             "BRUSDT": "1.23%"
         }
+    },
+    {
+        "date": "2026-03-28",
+        "total": -6.15,
+        "trades": {
+            "ARIAUSDT": "-14.03%",
+            "RIVERUSDT": "-0.99%",
+            "TRADOORUSDT": "-3.42%"
+        }
     }
 ]
