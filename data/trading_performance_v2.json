@@ -1015,5 +1015,14 @@
             "RIVERUSDT": "-0.99%",
             "TRADOORUSDT": "-3.42%"
         }
+    },
+    {
+        "date": "2026-03-30",
+        "total": -8.87,
+        "trades": {
+            "NOMUSDT": "-5.64%",
+            "ARIAUSDT": "-11.43%",
+            "KITEUSDT": "-9.55%"
+        }
     }
 ]
