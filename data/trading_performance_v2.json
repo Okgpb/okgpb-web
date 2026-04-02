@@ -1024,5 +1024,14 @@
             "ARIAUSDT": "-11.43%",
             "KITEUSDT": "-9.55%"
         }
+    },
+    {
+        "date": "2026-04-01",
+        "total": -0.19,
+        "trades": {
+            "NOMUSDT": "0.59%",
+            "ONTUSDT": "-7.45%",
+            "ARIAUSDT": "6.28%"
+        }
     }
 ]
