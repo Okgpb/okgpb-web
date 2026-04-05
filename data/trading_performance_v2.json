@@ -1033,5 +1033,14 @@
             "ONTUSDT": "-7.45%",
             "ARIAUSDT": "6.28%"
         }
+    },
+    {
+        "date": "2026-04-04",
+        "total": 8.3,
+        "trades": {
+            "STOUSDT": "30.00%",
+            "JCTUSDT": "-0.19%",
+            "PUFFERUSDT": "-4.91%"
+        }
     }
 ]
