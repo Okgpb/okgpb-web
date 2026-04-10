@@ -1060,5 +1060,14 @@
             "MONUSDT": "-6.57%",
             "ARIAUSDT": "10.72%"
         }
+    },
+    {
+        "date": "2026-04-09",
+        "total": 4.69,
+        "trades": {
+            "RAVEUSDT": "30.00%",
+            "NIGHTUSDT": "-1.32%",
+            "NOMUSDT": "-14.62%"
+        }
     }
 ]
