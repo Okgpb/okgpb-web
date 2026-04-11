@@ -1069,5 +1069,14 @@
             "NIGHTUSDT": "-1.32%",
             "NOMUSDT": "-14.62%"
         }
+    },
+    {
+        "date": "2026-04-10",
+        "total": 11.25,
+        "trades": {
+            "ARIAUSDT": "30.00%",
+            "LABUSDT": "-3.18%",
+            "MAGMAUSDT": "6.92%"
+        }
     }
 ]
