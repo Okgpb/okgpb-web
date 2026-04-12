@@ -1078,5 +1078,14 @@
             "LABUSDT": "-3.18%",
             "MAGMAUSDT": "6.92%"
         }
+    },
+    {
+        "date": "2026-04-11",
+        "total": 5.01,
+        "trades": {
+            "ARIAUSDT": "30.00%",
+            "RAVEUSDT": "-3.05%",
+            "CROSSUSDT": "-11.92%"
+        }
     }
 ]
