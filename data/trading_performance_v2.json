@@ -1087,5 +1087,14 @@
             "RAVEUSDT": "-3.05%",
             "CROSSUSDT": "-11.92%"
         }
+    },
+    {
+        "date": "2026-04-13",
+        "total": 17.36,
+        "trades": {
+            "BLESSUSDT": "30.00%",
+            "IRYSUSDT": "14.91%",
+            "BANUSDT": "7.16%"
+        }
     }
 ]
