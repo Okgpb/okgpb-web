@@ -1096,5 +1096,14 @@
             "IRYSUSDT": "14.91%",
             "BANUSDT": "7.16%"
         }
+    },
+    {
+        "date": "2026-04-14",
+        "total": -3.75,
+        "trades": {
+            "MYXUSDT": "-20.00%",
+            "MEZOUSDT": "-5.93%",
+            "RAVEUSDT": "14.68%"
+        }
     }
 ]
