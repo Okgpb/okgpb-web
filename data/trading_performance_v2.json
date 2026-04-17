@@ -1105,5 +1105,14 @@
             "MEZOUSDT": "-5.93%",
             "RAVEUSDT": "14.68%"
         }
+    },
+    {
+        "date": "2026-04-16",
+        "total": 7.24,
+        "trades": {
+            "SATSUSDT": "15.52%",
+            "BIOUSDT": "-2.11%",
+            "RAVEUSDT": "8.31%"
+        }
     }
 ]
