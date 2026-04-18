@@ -1114,5 +1114,14 @@
             "BIOUSDT": "-2.11%",
             "RAVEUSDT": "8.31%"
         }
+    },
+    {
+        "date": "2026-04-17",
+        "total": -15.22,
+        "trades": {
+            "MOVRUSDT": "-20.00%",
+            "SOONUSDT": "-11.82%",
+            "METISUSDT": "-13.83%"
+        }
     }
 ]
