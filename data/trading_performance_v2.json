@@ -1123,5 +1123,14 @@
             "SOONUSDT": "-11.82%",
             "METISUSDT": "-13.83%"
         }
+    },
+    {
+        "date": "2026-04-21",
+        "total": -8.11,
+        "trades": {
+            "RAVEUSDT": "-20.00%",
+            "UAIUSDT": "1.98%",
+            "GWEIUSDT": "-6.30%"
+        }
     }
 ]
