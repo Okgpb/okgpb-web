@@ -1132,5 +1132,14 @@
             "UAIUSDT": "1.98%",
             "GWEIUSDT": "-6.30%"
         }
+    },
+    {
+        "date": "2026-04-22",
+        "total": 2.76,
+        "trades": {
+            "COREUSDT": "-20.00%",
+            "SPKUSDT": "30.00%",
+            "TRIAUSDT": "-1.72%"
+        }
     }
 ]
