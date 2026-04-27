@@ -1141,5 +1141,14 @@
             "SPKUSDT": "30.00%",
             "TRIAUSDT": "-1.72%"
         }
+    },
+    {
+        "date": "2026-04-26",
+        "total": 23.05,
+        "trades": {
+            "ZBTUSDT": "30.00%",
+            "UMXMUSDT": "30.00%",
+            "NAORISUSDT": "9.14%"
+        }
     }
 ]
