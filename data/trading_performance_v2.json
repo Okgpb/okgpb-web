@@ -1159,5 +1159,14 @@
             "BLENDUSDT": "-5.22%",
             "BGSCUSDT": "1.30%"
         }
+    },
+    {
+        "date": "2026-04-30",
+        "total": -4.25,
+        "trades": {
+            "BSBUSDT": "-6.71%",
+            "BIOUSDT": "-1.86%",
+            "GWEIUSDT": "-4.18%"
+        }
     }
 ]
