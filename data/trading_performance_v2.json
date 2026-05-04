@@ -1186,5 +1186,14 @@
             "ELAUSDT": "-20.00%",
             "SKYAIUSDT": "-1.86%"
         }
+    },
+    {
+        "date": "2026-05-03",
+        "total": 3.31,
+        "trades": {
+            "TACUSDT": "-8.66%",
+            "NAORISUSDT": "-5.22%",
+            "AIGENSYNUSDT": "23.82%"
+        }
     }
 ]
