@@ -1195,5 +1195,14 @@
             "NAORISUSDT": "-5.22%",
             "AIGENSYNUSDT": "23.82%"
         }
+    },
+    {
+        "date": "2026-05-04",
+        "total": -10.63,
+        "trades": {
+            "TAGUSDT": "-20.00%",
+            "SKYAIUSDT": "-18.52%",
+            "SWARMSUSDT": "6.62%"
+        }
     }
 ]
