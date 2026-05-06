@@ -1204,5 +1204,14 @@
             "SKYAIUSDT": "-18.52%",
             "SWARMSUSDT": "6.62%"
         }
+    },
+    {
+        "date": "2026-05-05",
+        "total": 14.67,
+        "trades": {
+            "FHEUSDT": "30.00%",
+            "DOGSUSDT": "7.78%",
+            "LABUSDT": "6.24%"
+        }
     }
 ]
