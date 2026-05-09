@@ -1222,5 +1222,14 @@
             "ZECUSDT": "-7.95%",
             "IOUSDT": "-3.13%"
         }
+    },
+    {
+        "date": "2026-05-08",
+        "total": 1.94,
+        "trades": {
+            "BSBUSDT": "-20.00%",
+            "COLLECTUSDT": "30.00%",
+            "PROSUSDT": "-4.19%"
+        }
     }
 ]
