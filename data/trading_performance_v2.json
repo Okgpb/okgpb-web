@@ -1231,5 +1231,14 @@
             "COLLECTUSDT": "30.00%",
             "PROSUSDT": "-4.19%"
         }
+    },
+    {
+        "date": "2026-05-09",
+        "total": -4.46,
+        "trades": {
+            "BILLUSDT": "-14.77%",
+            "QUSDT": "1.65%",
+            "SAHARAUSDT": "-0.26%"
+        }
     }
 ]
