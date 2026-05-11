@@ -1240,5 +1240,14 @@
             "QUSDT": "1.65%",
             "SAHARAUSDT": "-0.26%"
         }
+    },
+    {
+        "date": "2026-05-10",
+        "total": 1.08,
+        "trades": {
+            "RVVUSDT": "-5.95%",
+            "LAYERUSDT": "5.68%",
+            "SUIUSDT": "3.51%"
+        }
     }
 ]
