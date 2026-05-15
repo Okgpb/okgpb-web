@@ -1258,5 +1258,14 @@
             "BUSDT": "7.92%",
             "USUSDT": "-9.47%"
         }
+    },
+    {
+        "date": "2026-05-14",
+        "total": -12.63,
+        "trades": {
+            "SWEATUSDT": "-20.00%",
+            "AIGENSYNUSDT": "-20.00%",
+            "RIVERUSDT": "2.11%"
+        }
     }
 ]
