@@ -1267,5 +1267,14 @@
             "AIGENSYNUSDT": "-20.00%",
             "RIVERUSDT": "2.11%"
         }
+    },
+    {
+        "date": "2026-05-20",
+        "total": 22.25,
+        "trades": {
+            "EDENUSDT": "30.00%",
+            "FIDAUSDT": "30.00%",
+            "LITUSDT": "6.75%"
+        }
     }
 ]
