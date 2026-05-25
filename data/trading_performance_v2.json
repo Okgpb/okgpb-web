@@ -1276,5 +1276,14 @@
             "FIDAUSDT": "30.00%",
             "LITUSDT": "6.75%"
         }
+    },
+    {
+        "date": "2026-05-24",
+        "total": -0.9,
+        "trades": {
+            "BILLUSDT": "3.22%",
+            "LITUSDT": "-5.82%",
+            "GRASSUSDT": "-0.10%"
+        }
     }
 ]
