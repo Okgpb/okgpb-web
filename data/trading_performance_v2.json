@@ -1312,5 +1312,14 @@
             "LABUSDT": "8.60%",
             "VTHOUSDT": "-6.03%"
         }
+    },
+    {
+        "date": "2026-06-07",
+        "total": -0.53,
+        "trades": {
+            "BSBUSDT": "-20.00%",
+            "BLESSUSDT": "30.00%",
+            "FIDAUSDT": "-11.60%"
+        }
     }
 ]
