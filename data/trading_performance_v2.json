@@ -1321,5 +1321,14 @@
             "BLESSUSDT": "30.00%",
             "FIDAUSDT": "-11.60%"
         }
+    },
+    {
+        "date": "2026-06-08",
+        "total": -9.1,
+        "trades": {
+            "BLESSUSDT": "-20.00%",
+            "VELVETUSDT": "-16.17%",
+            "ALLOUSDT": "8.87%"
+        }
     }
 ]
