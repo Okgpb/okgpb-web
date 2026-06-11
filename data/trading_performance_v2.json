@@ -1330,5 +1330,14 @@
             "VELVETUSDT": "-16.17%",
             "ALLOUSDT": "8.87%"
         }
+    },
+    {
+        "date": "2026-06-10",
+        "total": -7.51,
+        "trades": {
+            "OPNUSDT": "-20.00%",
+            "MAGMAUSDT": "-11.57%",
+            "HMSTRUSDT": "9.03%"
+        }
     }
 ]
