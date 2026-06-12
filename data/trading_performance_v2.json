@@ -1339,5 +1339,14 @@
             "MAGMAUSDT": "-11.57%",
             "HMSTRUSDT": "9.03%"
         }
+    },
+    {
+        "date": "2026-06-11",
+        "total": 7.3,
+        "trades": {
+            "VELVETUSDT": "30.00%",
+            "AIOUSDT": "-5.95%",
+            "COLLECTUSDT": "-2.14%"
+        }
     }
 ]
