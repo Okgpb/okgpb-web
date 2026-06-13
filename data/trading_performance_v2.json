@@ -1348,5 +1348,14 @@
             "AIOUSDT": "-5.95%",
             "COLLECTUSDT": "-2.14%"
         }
+    },
+    {
+        "date": "2026-06-12",
+        "total": -10.7,
+        "trades": {
+            "HUSDT": "-20.00%",
+            "NAORISUSDT": "-6.55%",
+            "XPLUSDT": "-5.55%"
+        }
     }
 ]
