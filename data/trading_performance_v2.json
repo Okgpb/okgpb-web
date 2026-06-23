@@ -1416,5 +1416,12 @@
             "TNSRUSDT": "1.38%",
             "MAGMAUSDT": "-4.60%"
         }
+    },
+    {
+        "date": "2026-06-22",
+        "total": 10.0,
+        "trades": {
+            "BLESSUSDT": "30.00%"
+        }
     }
 ]
