@@ -1423,5 +1423,14 @@
         "trades": {
             "BLESSUSDT": "30.00%"
         }
+    },
+    {
+        "date": "2026-06-26",
+        "total": 2.18,
+        "trades": {
+            "MAGMAUSDT": "-20.00%",
+            "ICNTUSDT": "-0.33%",
+            "VELVETUSDT": "26.86%"
+        }
     }
 ]
