@@ -1432,5 +1432,14 @@
             "ICNTUSDT": "-0.33%",
             "VELVETUSDT": "26.86%"
         }
+    },
+    {
+        "date": "2026-06-27",
+        "total": 11.6,
+        "trades": {
+            "SLXUSDT": "30.00%",
+            "VELVETUSDT": "10.63%",
+            "MYXUSDT": "-5.83%"
+        }
     }
 ]
