@@ -1459,5 +1459,14 @@
             "BIRBUSDT": "-14.83%",
             "MUSDT": "-5.85%"
         }
+    },
+    {
+        "date": "2026-07-03",
+        "total": 9.66,
+        "trades": {
+            "NEXUSDT": "-0.12%",
+            "HMSTRUSDT": "28.20%",
+            "BLESSUSDT": "0.91%"
+        }
     }
 ]
