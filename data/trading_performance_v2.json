@@ -1468,5 +1468,14 @@
             "HMSTRUSDT": "28.20%",
             "BLESSUSDT": "0.91%"
         }
+    },
+    {
+        "date": "2026-07-04",
+        "total": -13.26,
+        "trades": {
+            "LABUSDT": "-20.00%",
+            "TLMUSDT": "-12.44%",
+            "HMSTRUSDT": "-7.34%"
+        }
     }
 ]
