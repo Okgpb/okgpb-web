@@ -1477,5 +1477,14 @@
             "TLMUSDT": "-12.44%",
             "HMSTRUSDT": "-7.34%"
         }
+    },
+    {
+        "date": "2026-07-06",
+        "total": -10.05,
+        "trades": {
+            "LATUSDT": "-20.00%",
+            "VANRYUSDT": "-4.46%",
+            "TRIAUSDT": "-5.70%"
+        }
     }
 ]
