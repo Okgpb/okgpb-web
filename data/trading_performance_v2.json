@@ -1486,5 +1486,13 @@
             "VANRYUSDT": "-4.46%",
             "TRIAUSDT": "-5.70%"
         }
+    },
+    {
+        "date": "2026-07-07",
+        "total": -3.59,
+        "trades": {
+            "EDGEUSDT": "6.93%",
+            "BLURUSDT": "-17.69%"
+        }
     }
 ]
