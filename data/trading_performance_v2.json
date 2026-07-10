@@ -1494,5 +1494,13 @@
             "EDGEUSDT": "6.93%",
             "BLURUSDT": "-17.69%"
         }
+    },
+    {
+        "date": "2026-07-09",
+        "total": 9.63,
+        "trades": {
+            "TAGUSDT": "30.00%",
+            "MAGMAUSDT": "-1.10%"
+        }
     }
 ]
