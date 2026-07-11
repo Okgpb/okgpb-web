@@ -1502,5 +1502,14 @@
             "TAGUSDT": "30.00%",
             "MAGMAUSDT": "-1.10%"
         }
+    },
+    {
+        "date": "2026-07-10",
+        "total": 3.9,
+        "trades": {
+            "ILYUSDT": "30.00%",
+            "TAGUSDT": "-3.73%",
+            "VELVETUSDT": "-14.57%"
+        }
     }
 ]
