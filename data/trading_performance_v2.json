@@ -1511,5 +1511,12 @@
             "TAGUSDT": "-3.73%",
             "VELVETUSDT": "-14.57%"
         }
+    },
+    {
+        "date": "2026-07-11",
+        "total": 0.29,
+        "trades": {
+            "VIRTUALUSDT": "0.86%"
+        }
     }
 ]
