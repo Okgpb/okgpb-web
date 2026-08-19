@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#171a2b">
+  <meta name="description" content="{{ .Description }}">
+  <title>{{ .Title }} · Okgpb</title>
+  <link rel="stylesheet" href="/sunset/sunset.css">
+</head>
+<body class="sunset-page">
+  <div class="sunset-shell" data-sunset-app>
+    <div class="atmosphere" aria-hidden="true">
+      <div class="atmosphere__grain"></div>
+      <div class="atmosphere__glow"></div>
+      <div class="atmosphere__sun"></div>
+      <div class="atmosphere__horizon"></div>
+    </div>
+
+    <header class="sunset-nav">
+      <a class="sunset-nav__brand" href="/" aria-label="Back to Okgpb home">
+        <span class="sunset-nav__mark" aria-hidden="true"></span>
+        <span>Okgpb</span>
+      </a>
+      <span class="sunset-nav__product">Sunset Signal</span>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="sunset-title">
+        <div class="hero__eyebrow">
+          <span class="hero__location">Haifa, Israel</span>
+          <span aria-hidden="true">·</span>
+          <time class="hero__date" data-date>Today</time>
+        </div>
+
+        <div class="hero__decision">
+          <div class="score-block" aria-live="polite">
+            <span class="score-block__label">SUNSET QUALITY</span>
+            <div class="score-block__value-wrap">
+              <strong class="score-block__value" data-score>—</strong>
+              <span class="score-block__max">/100</span>
+            </div>
+          </div>
+
+          <div class="decision-copy">
+            <p class="decision-copy__kicker" data-recommendation-kicker>Reading the atmosphere</p>
+            <h1 id="sunset-title" class="decision-copy__title" data-recommendation>Forecast loading</h1>
+            <p class="decision-copy__summary" data-summary>Building tonight’s decision from the latest sunset and weather evidence.</p>
+          </div>
+        </div>
+
+        <div class="hero__meta" aria-label="Key sunset information">
+          <article class="metric">
+            <span class="metric__label">Sunset</span>
+            <strong class="metric__value" data-sunset-time>—</strong>
+            <span class="metric__detail" data-direction>Direction —</span>
+          </article>
+          <article class="metric">
+            <span class="metric__label">Confidence</span>
+            <strong class="metric__value" data-confidence>—</strong>
+            <span class="metric__detail" data-freshness>Checking freshness</span>
+          </article>
+          <article class="metric">
+            <span class="metric__label">Trend</span>
+            <strong class="metric__value" data-trend>—</strong>
+            <span class="metric__detail">Same-day forecast movement</span>
+          </article>
+        </div>
+
+        <div class="hero__status" data-status role="status">
+          <span class="hero__status-dot" aria-hidden="true"></span>
+          <span>Connecting to Sunset Signal</span>
+        </div>
+      </section>
+
+      <section class="evidence" aria-labelledby="evidence-title">
+        <div class="section-heading">
+          <p class="section-heading__eyebrow">ATMOSPHERIC EVIDENCE</p>
+          <h2 id="evidence-title">Why tonight looks this way</h2>
+          <p>Decision first, meteorology second. These signals explain the recommendation without inventing a second black-box score.</p>
+        </div>
+
+        <div class="evidence-grid">
+          <article class="cloud-panel">
+            <div class="panel-heading">
+              <div>
+                <span class="panel-heading__label">Cloud canvas</span>
+                <h3>Layer profile</h3>
+              </div>
+              <span class="panel-heading__note">Near sunset</span>
+            </div>
+
+            <div class="cloud-layer">
+              <div class="cloud-layer__copy"><span>High</span><strong data-cloud-high>—%</strong></div>
+              <div class="cloud-layer__track"><span data-cloud-high-bar></span></div>
+            </div>
+            <div class="cloud-layer">
+              <div class="cloud-layer__copy"><span>Mid</span><strong data-cloud-mid>—%</strong></div>
+              <div class="cloud-layer__track"><span data-cloud-mid-bar></span></div>
+            </div>
+            <div class="cloud-layer">
+              <div class="cloud-layer__copy"><span>Low</span><strong data-cloud-low>—%</strong></div>
+              <div class="cloud-layer__track"><span data-cloud-low-bar></span></div>
+            </div>
+          </article>
+
+          <article class="air-panel">
+            <div class="panel-heading">
+              <div>
+                <span class="panel-heading__label">Air & light</span>
+                <h3>Clarity context</h3>
+              </div>
+            </div>
+            <dl class="air-list">
+              <div><dt>Visibility</dt><dd data-visibility>—</dd></div>
+              <div><dt>Western path</dt><dd data-western-path>Evaluating</dd></div>
+              <div><dt>Provider state</dt><dd data-provider-state>Connecting</dd></div>
+            </dl>
+          </article>
+        </div>
+      </section>
+
+      <section class="horizon-preview" aria-labelledby="horizon-title">
+        <div class="horizon-preview__copy">
+          <p class="section-heading__eyebrow">LIGHT PATH</p>
+          <h2 id="horizon-title">Looking west, not just overhead</h2>
+          <p>The next layer of Sunset Signal follows the sunset azimuth outward to reveal whether distant low cloud blocks the light before it reaches Haifa.</p>
+        </div>
+        <div class="horizon-line" aria-hidden="true">
+          <span class="horizon-line__origin"></span>
+          <span class="horizon-line__beam"></span>
+          <span class="horizon-line__point horizon-line__point--1"></span>
+          <span class="horizon-line__point horizon-line__point--2"></span>
+          <span class="horizon-line__point horizon-line__point--3"></span>
+          <span class="horizon-line__point horizon-line__point--4"></span>
+        </div>
+        <div class="horizon-labels" aria-hidden="true"><span>Haifa</span><span>25 km</span><span>50 km</span><span>100 km</span><span>200 km</span></div>
+      </section>
+    </main>
+
+    <footer class="sunset-footer">
+      <p>Sunsethue quality · Open-Meteo weather context</p>
+      <p data-updated>Awaiting first update</p>
+    </footer>
+  </div>
+  <script src="/sunset/sunset.js" defer></script>
+</body>
+</html>
