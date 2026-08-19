@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07101f">
+  <meta name="description" content="Sunset Signal — a decision-first sunset intelligence dashboard for Haifa.">
+  <title>Sunset Signal · Haifa</title>
+  <link rel="stylesheet" href="/sunset/sunset.css">
+</head>
+<body class="sunset-app is-loading">
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient__wash"></div>
+    <div class="ambient__glow"></div>
+    <div class="ambient__grain"></div>
+  </div>
+
+  <main>
+    <section class="hero" id="today" aria-labelledby="hero-title">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Back to Okgpb home">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span>Sunset Signal</span>
+        </a>
+        <div class="live-chip"><span class="live-chip__dot"></span><span data-live-label>Live forecast</span></div>
+      </header>
+
+      <div class="hero__content">
+        <div class="decision">
+          <p class="eyebrow"><span data-location>Haifa, Israel</span><span class="eyebrow__dot">·</span><span data-date>Today</span></p>
+          <div class="decision__row">
+            <div class="score" aria-label="Sunset quality score">
+              <span class="score__value" data-score>--</span><span class="score__unit">/100</span>
+            </div>
+            <span class="state state--loading" data-state>Checking</span>
+          </div>
+          <h1 id="hero-title" data-headline>Reading tonight’s sky.</h1>
+          <p class="decision__summary" data-summary>Connecting the quality forecast with the weather around sunset.</p>
+        </div>
+
+        <aside class="solar-panel" aria-label="Sunset timing and direction">
+          <div class="solar-panel__top">
+            <div>
+              <span class="micro-label">Sun path</span>
+              <strong data-direction>—</strong>
+            </div>
+            <span class="solar-panel__remaining" data-remaining>Calculating window</span>
+          </div>
+          <svg class="solar-arc" viewBox="0 0 440 190" role="img" aria-label="Sunset progression">
+            <defs>
+              <linearGradient id="arcGradient" x1="0" x2="1">
+                <stop offset="0" stop-color="#43d7ff" stop-opacity=".35"/>
+                <stop offset=".58" stop-color="#8bd8ff" stop-opacity=".85"/>
+                <stop offset="1" stop-color="#ffc67a" stop-opacity="1"/>
+              </linearGradient>
+              <radialGradient id="sunGradient">
+                <stop offset="0" stop-color="#fff8d9"/>
+                <stop offset=".42" stop-color="#ffd590"/>
+                <stop offset="1" stop-color="#ff9f6b"/>
+              </radialGradient>
+            </defs>
+            <path id="sun-path" d="M28 152 Q220 16 412 152" fill="none" stroke="url(#arcGradient)" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 8"/>
+            <line x1="28" y1="152" x2="412" y2="152" class="solar-arc__horizon"/>
+            <circle id="sun-halo" cx="220" cy="46" r="25" class="solar-arc__halo"/>
+            <circle id="sun-dot" cx="220" cy="46" r="10" fill="url(#sunGradient)"/>
+          </svg>
+          <div class="solar-panel__times">
+            <div><span>Golden hour</span><strong data-golden>—</strong></div>
+            <div><span>Sunset</span><strong data-sunset>—</strong></div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="hero-metrics" aria-label="Key forecast facts">
+        <div class="hero-metric"><span>Sunset</span><strong data-sunset-compact>—</strong></div>
+        <div class="hero-metric"><span>Confidence</span><strong data-confidence>—</strong></div>
+        <div class="hero-metric"><span>Trend</span><strong data-trend>—</strong></div>
+        <div class="hero-metric"><span>Updated</span><strong data-updated>—</strong></div>
+      </div>
+
+      <a class="explore-cue" href="#intelligence"><span>Explore tonight</span><span aria-hidden="true">↓</span></a>
+    </section>
+
+    <div class="dashboard" id="intelligence">
+      <section class="section-heading reveal">
+        <div>
+          <p class="kicker">Tonight, explained</p>
+          <h2>Useful evidence, not dashboard noise.</h2>
+        </div>
+        <p>Each module answers a decision question. Raw provider evidence stays visible; Sunset Signal does not invent a second opaque quality score.</p>
+      </section>
+
+      <section class="bento bento--evidence" aria-label="Tonight's forecast evidence">
+        <article class="card card--why reveal" data-card>
+          <div class="card__header">
+            <div><span class="card__kicker">Why tonight?</span><h3>Evidence around the forecast</h3></div>
+            <span class="card__icon" aria-hidden="true">✦</span>
+          </div>
+          <div class="evidence-list" id="why-list">
+            <div class="mini-skeleton"></div><div class="mini-skeleton"></div><div class="mini-skeleton"></div>
+          </div>
+          <p class="card__note">Evidence is descriptive and does not replace Sunsethue’s quality score.</p>
+        </article>
+
+        <article class="card card--cloud reveal" data-card>
+          <div class="card__header">
+            <div><span class="card__kicker">Cloud canvas</span><h3>Layers near sunset</h3></div>
+            <span class="card__status" data-cloud-summary>Loading</span>
+          </div>
+          <div class="cloud-stack" aria-label="Cloud cover by altitude">
+            <div class="cloud-layer cloud-layer--high"><div class="cloud-layer__meta"><span>High</span><strong data-cloud-high>—</strong></div><div class="meter"><span data-cloud-high-bar></span></div><small>8 km+</small></div>
+            <div class="cloud-layer cloud-layer--mid"><div class="cloud-layer__meta"><span>Mid</span><strong data-cloud-mid>—</strong></div><div class="meter"><span data-cloud-mid-bar></span></div><small>3–8 km</small></div>
+            <div class="cloud-layer cloud-layer--low"><div class="cloud-layer__meta"><span>Low</span><strong data-cloud-low>—</strong></div><div class="meter"><span data-cloud-low-bar></span></div><small>0–3 km</small></div>
+          </div>
+          <div class="cloud-explainer"><span class="legend-dot legend-dot--low"></span>Low cloud can block the light path.<span class="legend-dot legend-dot--high"></span>Mid/high cloud can catch color.</div>
+        </article>
+
+        <article class="card card--horizon reveal" data-card>
+          <div class="card__header card__header--split">
+            <div><span class="card__kicker">Western Horizon</span><h3>See the entire light path</h3></div>
+            <div class="horizon-heading-meta"><strong data-horizon-direction>—</strong><span>25–200 km from Haifa</span></div>
+          </div>
+
+          <div class="light-path" aria-hidden="true">
+            <span class="light-path__beam"></span>
+            <span class="light-path__origin"></span>
+            <span class="light-path__node" style="--x:20%"></span>
+            <span class="light-path__node" style="--x:40%"></span>
+            <span class="light-path__node" style="--x:62%"></span>
+            <span class="light-path__node" style="--x:88%"></span>
+            <span class="light-path__sun"></span>
+          </div>
+
+          <div class="horizon-matrix-wrap">
+            <div class="horizon-matrix" id="horizon-matrix" role="table" aria-label="Low, mid, and high cloud cover from Haifa to 200 km along the sunset direction">
+              <div class="matrix-corner"></div>
+              <div class="matrix-distance"><strong>Here</strong><span>0 km</span></div>
+              <div class="matrix-distance"><strong>25</strong><span>km</span></div>
+              <div class="matrix-distance"><strong>50</strong><span>km</span></div>
+              <div class="matrix-distance"><strong>100</strong><span>km</span></div>
+              <div class="matrix-distance"><strong>200</strong><span>km</span></div>
+              <div class="matrix-layer matrix-layer--high"><strong>High</strong><span>8 km+</span></div>
+              <div class="matrix-placeholder"></div><div class="matrix-placeholder"></div><div class="matrix-placeholder"></div><div class="matrix-placeholder"></div><div class="matrix-placeholder"></div>
+              <div class="matrix-layer matrix-layer--mid"><strong>Mid</strong><span>3–8 km</span></div>
+              <div class="matrix-placeholder"></div><div class="matrix-placeholder"></div><div class="matrix-placeholder"></div><div class="matrix-placeholder"></div><div class="matrix-placeholder"></div>
+              <div class="matrix-layer matrix-layer--low"><strong>Low</strong><span>0–3 km</span></div>
+              <div class="matrix-placeholder"></div><div class="matrix-placeholder"></div><div class="matrix-placeholder"></div><div class="matrix-placeholder"></div><div class="matrix-placeholder"></div>
+            </div>
+          </div>
+          <div class="horizon-insight" id="horizon-insight"><span class="pulse-dot"></span><p>Waiting for layered horizon evidence.</p></div>
+        </article>
+      </section>
+
+      <section class="section-heading section-heading--compact reveal">
+        <div><p class="kicker">Movement</p><h2>What is changing?</h2></div>
+        <p>A good sunset call is not only the latest number — it is how the forecast arrived there.</p>
+      </section>
+
+      <section class="bento bento--movement">
+        <article class="card card--journey reveal" data-card>
+          <div class="card__header card__header--split">
+            <div><span class="card__kicker">Forecast Journey</span><h3>Today’s quality trajectory</h3></div>
+            <div class="journey-delta" data-journey-delta>Collecting snapshots</div>
+          </div>
+          <div class="chart-wrap">
+            <svg id="journey-chart" class="journey-chart" viewBox="0 0 760 260" role="img" aria-label="Sunset quality forecast changes through today">
+              <line x1="46" y1="40" x2="730" y2="40" class="chart-grid"/><line x1="46" y1="126" x2="730" y2="126" class="chart-grid"/><line x1="46" y1="212" x2="730" y2="212" class="chart-grid"/>
+              <text x="8" y="45" class="chart-label">100</text><text x="18" y="131" class="chart-label">50</text><text x="27" y="217" class="chart-label">0</text>
+              <path id="journey-area" class="journey-area" d=""/>
+              <path id="journey-line" class="journey-line" d=""/>
+              <g id="journey-points"></g>
+            </svg>
+            <div class="chart-empty" id="journey-empty">More snapshots will unlock the trend line.</div>
+          </div>
+          <div class="journey-stats"><div><span>First today</span><strong data-journey-first>—</strong></div><div><span>Best seen</span><strong data-journey-best>—</strong></div><div><span>Now</span><strong data-journey-now>—</strong></div></div>
+        </article>
+
+        <article class="card card--changes reveal" data-card>
+          <div class="card__header"><div><span class="card__kicker">What changed?</span><h3>Since the last snapshot</h3></div></div>
+          <div class="change-list" id="change-list"><div class="mini-skeleton"></div><div class="mini-skeleton"></div></div>
+          <p class="card__note" data-change-note>Comparisons appear once two snapshots are available.</p>
+        </article>
+      </section>
+
+      <section class="section-heading section-heading--compact reveal">
+        <div><p class="kicker">Act on it</p><h2>When — and whether — to go.</h2></div>
+      </section>
+
+      <section class="bento bento--action">
+        <article class="card card--window reveal" data-card>
+          <div class="card__header card__header--split">
+            <div><span class="card__kicker">Golden Window</span><h3>Tonight’s useful timing</h3></div>
+            <span class="card__status" data-window-status>—</span>
+          </div>
+          <div class="window-track" id="window-track">
+            <span class="window-track__line"></span><span class="window-track__fill" data-window-fill></span><span class="window-track__now" data-window-now></span>
+            <span class="window-marker window-marker--golden" data-window-golden-marker></span><span class="window-marker window-marker--sunset" data-window-sunset-marker></span><span class="window-marker window-marker--blue" data-window-blue-marker></span>
+          </div>
+          <div class="window-times"><div><span>Golden starts</span><strong data-window-golden>—</strong></div><div><span>Sunset</span><strong data-window-sunset>—</strong></div><div><span>Blue hour ends</span><strong data-window-blue>—</strong></div></div>
+          <p class="window-advice" data-window-advice>Waiting for event timing.</p>
+        </article>
+
+        <article class="card card--next reveal" data-card>
+          <div class="card__header"><div><span class="card__kicker">Next sunsets</span><h3>Pick the better evening</h3></div></div>
+          <div class="next-days" id="next-days"><div class="day-skeleton"></div><div class="day-skeleton"></div><div class="day-skeleton"></div></div>
+        </article>
+      </section>
+
+      <section class="bento bento--trust">
+        <article class="card card--confidence reveal" data-card>
+          <div class="confidence-lead"><span class="card__kicker">Confidence & freshness</span><div class="confidence-big" data-confidence-big>—</div><p>See why the forecast can — or cannot — be trusted right now.</p></div>
+          <div class="confidence-checks" id="confidence-checks"><div class="mini-skeleton"></div><div class="mini-skeleton"></div><div class="mini-skeleton"></div></div>
+          <div class="source-times"><div><span>Sunsethue</span><strong data-source-sunsethue>—</strong></div><div><span>Open-Meteo</span><strong data-source-weather>—</strong></div><div><span>Page refreshed</span><strong data-source-page>—</strong></div></div>
+        </article>
+      </section>
+
+      <footer class="sunset-footer reveal">
+        <span>Sunsethue quality · Open-Meteo weather evidence</span><span>Sunset Signal · Haifa</span>
+      </footer>
+    </div>
+  </main>
+
+  <div class="toast" id="status-toast" role="status" aria-live="polite"></div>
+  <script src="/sunset/sunset.js" defer></script>
+</body>
+</html>
