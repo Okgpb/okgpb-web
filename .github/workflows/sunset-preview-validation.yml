@@ -1,0 +1,39 @@
+name: Sunset Preview Validation
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "layouts/sunset/**"
+      - "static/sunset/**"
+      - ".github/workflows/sunset-preview-validation.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          submodules: false
+
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+
+      - name: Check Sunset JavaScript syntax
+        run: node --check static/sunset/sunset.js
+
+      - name: Check expected V3 surface exists
+        shell: bash
+        run: |
+          grep -q 'id="scene-canvas"' layouts/sunset/single.html
+          grep -q 'id="lightpath-canvas"' layouts/sunset/single.html
+          grep -q 'id="light-scrubber"' layouts/sunset/single.html
+          grep -q 'data-day-index="1"' layouts/sunset/single.html
